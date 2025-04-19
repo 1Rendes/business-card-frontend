@@ -1,0 +1,17 @@
+@import url(./reset.css);
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}

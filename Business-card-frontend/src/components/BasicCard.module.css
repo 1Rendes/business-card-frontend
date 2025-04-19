@@ -1,0 +1,37 @@
+.basicCard {
+  margin-top: 200px;
+  background-image: url(../images/card-background2.jpg);
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 5px 9px 20px 2px #313131;
+}
+.whiteback {
+  border-radius: 15px;
+  padding: 20px 20px 10px 20px;
+  width: 400px;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.name {
+  font-size: 25px;
+}
+.profession {
+  font-size: 12px;
+}
+.addressBlock {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.address {
+  color: black;
+  font-size: 16px;
+  font-style: normal;
+}
+.addressLink {
+  color: black;
+  text-decoration: underline;
+}
