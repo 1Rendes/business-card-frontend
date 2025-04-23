@@ -17,7 +17,9 @@ export type ConnectionDetails = {
   participantToken: string;
 };
 
-const axiosInstance = axios.create({ baseURL: "http://localhost:3001" });
+const axiosInstance = axios.create({
+  baseURL: "https://business-card-backend-uwr3.onrender.com",
+});
 
 export const getConnectionDetails = async () => {
   const response = await axiosInstance.get(`/get-livekit-token`);
