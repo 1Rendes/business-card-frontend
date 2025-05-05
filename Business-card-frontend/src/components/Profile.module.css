@@ -1,0 +1,43 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 50px 100px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.59);
+}
+.firstBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profilePhoto {
+  width: 150px;
+  height: 200px;
+  border-radius: 5%;
+  margin-bottom: auto;
+}
+.nameBlock {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: justify;
+}
+.stringHeader {
+  font-weight: bold;
+  width: 250px;
+}
+.string {
+  display: flex;
+  width: 100%;
+}
+.table {
+  width: 100%;
+}
