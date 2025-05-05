@@ -1,7 +1,23 @@
+import { useState } from "react";
 import BasicCard from "./components/BasicCard";
+import Profile from "./components/Profile";
+import Container from "./components/Container";
 
 function App() {
-  return <BasicCard />;
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpenCards = () => {
+    if (isOpen) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+  };
+  return (
+    <Container>
+      <BasicCard handleOpenCards={handleOpenCards} />
+      {isOpen && <Profile />}
+    </Container>
+  );
 }
 
 export default App;

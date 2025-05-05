@@ -10,6 +10,22 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #ffffff,
+    #f2f1fb,
+    #e3e4f7,
+    #d3d8f4,
+    #c0ccf1,
+    #a9b8df,
+    #91a4cd,
+    #7a90bb,
+    #5c6f98,
+    #3f5076,
+    #233355,
+    #051937
+  );
 }
 
 p {
@@ -19,4 +35,9 @@ p {
 .microphone-icon-default {
   width: 25px;
   height: 25px;
+  transition: scale 100ms ease-in-out;
+}
+
+.microphone-icon-default:hover {
+  scale: 1.3;
 }

@@ -4,13 +4,14 @@
   background-position: center;
   border-radius: 15px;
   box-shadow: 5px 9px 20px 2px #313131;
+  width: 450px;
   position: relative;
+  margin-bottom: 50px;
 }
 .whiteback {
   border-radius: 15px;
   padding: 20px 20px 10px 20px;
-  width: 450px;
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: rgba(211, 211, 253, 0.51);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -35,4 +36,16 @@
 .addressLink {
   color: black;
   text-decoration: underline;
+}
+.dots {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 190px;
+  left: 40px;
+  cursor: pointer;
+  transition: scale 100ms ease-in-out;
+}
+.dots:hover {
+  scale: 1.3;
 }

@@ -1,0 +1,696 @@
+{
+  "type": "plan",
+  "data": {
+    "chapters": [
+      {
+        "title": "Введение в JavaScript",
+        "description": "Основы JavaScript, его история и значение в современной веб-разработке.",
+        "sections": [
+          {
+            "title": "Что такое JavaScript?",
+            "content": "История создания, основные понятия и место JavaScript в разработке."
+          },
+          {
+            "title": "Подключение JavaScript к веб-странице",
+            "content": "Способы подключения, внешние скрипты, атрибуты async и defer."
+          },
+          {
+            "title": "Переменные и типы данных",
+            "content": "Объявление переменных, типы данных, динамическая типизация."
+          }
+        ],
+        "exam": {
+          "questions": [
+            {
+              "question": "Кто создал JavaScript?",
+              "options": [
+                "Дуглас Крокфорд",
+                "Брендан Эйх",
+                "Марк Андреессен",
+                "Тим Бернерс-Ли"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "В каком году был создан JavaScript?",
+              "options": ["1995", "1994", "1996", "1993"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какая компания стала родиной JavaScript?",
+              "options": [
+                "Microsoft",
+                "Sun Microsystems",
+                "Netscape",
+                "Oracle"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой был первоначальный название JavaScript?",
+              "options": ["LiveScript", "Java", "ECMAScript", "Mocha"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Для чего используется JavaScript в веб-разработке?",
+              "options": [
+                "Стилизация веб-страниц",
+                "Создание серверных приложений",
+                "Взаимодействие с пользователем и создание динамических веб-страниц",
+                "Структурирование веб-документов"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Что такое ECMAScript?",
+              "options": [
+                "Библиотека JavaScript",
+                "Стандарт для скриптовых языков",
+                "Ядро JavaScript",
+                "Новая версия JavaScript"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какая конструкция используется для создания цикла в JavaScript?",
+              "options": ["if", "for", "while", "switch"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод позволяет преобразовать JSON в объект JavaScript?",
+              "options": [
+                "JSON.parse()",
+                "JSON.stringify()",
+                "JSON.toObject()",
+                "JSON.fromJSON()"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Как объявить переменную в JavaScript?",
+              "options": ["var", "let", "const", "Все вышеперечисленные"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какой символ используется для комментариев в одну строку в JavaScript?",
+              "options": ["//", "/* */", "#", "<!-- -->"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что делает оператор '===' в JavaScript?",
+              "options": [
+                "Производит присваивание",
+                "Сравнивает по типу и значению",
+                "Сравнивает только по значению",
+                "Сравнивает на неравенство"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какое ключевое слово используется для создания функции в JavaScript?",
+              "options": ["function", "new", "def", "func"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что возвращает оператор typeof для массивов в JavaScript?",
+              "options": ["'array'", "'object'", "'list'", "'collection'"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Как в JavaScript создать объект?",
+              "options": ["{}", "[]", "new Object()", "Все вышеперечисленные"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какое событие чаще всего используется для запуска JavaScript кода после загрузки веб-страницы?",
+              "options": ["onload", "onready", "onstart", "onlaunch"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какое ключевое слово используется для обработки исключений в JavaScript?",
+              "options": ["try...catch", "error", "fault", "exception"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой метод используется для добавления элемента в конец массива?",
+              "options": ["push()", "pop()", "shift()", "unshift()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какая функция позволяет вызывать другую функцию с задержкой?",
+              "options": ["setTimeout()", "setInterval()", "delay()", "wait()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что такое Promise в JavaScript?",
+              "options": [
+                "Цикл",
+                "Функция обратного вызова",
+                "Объект, представляющий завершение (или провал) асинхронной операции",
+                "Переменная"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод массива используется для преобразования всех элементов в строку?",
+              "options": ["concat()", "join()", "toString()", "stringify()"],
+              "correctAnswerIndex": 1
+            }
+          ]
+        }
+      },
+      {
+        "title": "Основы программирования на JavaScript",
+        "description": "Изучение основных конструкций и синтаксиса языка.",
+        "sections": [
+          {
+            "title": "Управляющие конструкции",
+            "content": "Условные операторы, циклы, switch-case."
+          },
+          {
+            "title": "Функции",
+            "content": "Объявление функций, параметры, возвращаемое значение."
+          },
+          {
+            "title": "Объекты и массивы",
+            "content": "Создание, доступ к элементам, методы работы с массивами."
+          }
+        ],
+        "exam": {
+          "questions": [
+            {
+              "question": "Как объявить переменную, значение которой нельзя изменить после её инициализации?",
+              "options": ["let", "var", "const", "static"],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод используется для преобразования JSON в объект JavaScript?",
+              "options": [
+                "JSON.parse()",
+                "JSON.stringify()",
+                "JSON.toObject()",
+                "JSON.toArray()"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой оператор используется для сравнения значений по типу и значению?",
+              "options": ["==", "===", "=", "!="],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какая функция используется для вывода данных в консоль?",
+              "options": [
+                "document.write()",
+                "console.write()",
+                "console.log()",
+                "alert()"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой цикл не существует в JavaScript?",
+              "options": ["for", "foreach", "while", "repeat until"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Как в JavaScript создать массив?",
+              "options": [
+                "var arr = new Array()",
+                "var arr = Array()",
+                "var arr = []",
+                "Все ответы верны"
+              ],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какое ключевое слово используется для создания асинхронной функции?",
+              "options": ["await", "async", "defer", "parallel"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какая из функций выполняет обратный вызов (callback) для каждого элемента массива?",
+              "options": ["map()", "forEach()", "filter()", "reduce()"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Как получить последний элемент из массива arr?",
+              "options": [
+                "arr.last",
+                "arr[arr.length]",
+                "arr[arr.length - 1]",
+                "arr.end()"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Как добавить элемент в начало массива?",
+              "options": ["push()", "unshift()", "append()", "prepend()"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Что делает оператор '==='?",
+              "options": [
+                "Присваивает значение",
+                "Сравнивает значения и типы",
+                "Сравнивает только значения",
+                "Преобразует тип, затем сравнивает значения"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод удаляет последний элемент из массива?",
+              "options": ["pop()", "push()", "shift()", "unshift()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Как объявить анонимную функцию?",
+              "options": [
+                "function myFunction() {}",
+                "var myFunction = function() {}",
+                "function() {}",
+                "() => {}"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какое выражение используется для создания нового объекта?",
+              "options": [
+                "create Object()",
+                "new Object()",
+                "Object.create()",
+                "new createObject()"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод массива возвращает новый массив с результатами вызова указанной функции для каждого элемента?",
+              "options": ["map()", "forEach()", "filter()", "reduce()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Как в JavaScript проверить, является ли значение переменной массивом?",
+              "options": [
+                "typeof",
+                "isArray()",
+                "instanceof",
+                "Array.isArray()"
+              ],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какой синтаксис корректно создает объект?",
+              "options": [
+                "var obj = new Object{name: 'John', age: 30}",
+                "var obj = Object{name: 'John', age: 30}",
+                "var obj = {name: 'John', age: 30}",
+                "var obj = Object.create(name: 'John', age: 30)"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод позволяет преобразовать строку в число?",
+              "options": [
+                "Number.parse()",
+                "parseInt()",
+                "Number()",
+                "All of the above"
+              ],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Как использовать тернарный оператор?",
+              "options": [
+                "condition ? true : false",
+                "if condition then true else false",
+                "condition >> true >> false",
+                "(if condition) {true} else {false}"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой способ не является правильным для объявления функции?",
+              "options": [
+                "function myFunc() {}",
+                "var myFunc = function() {}",
+                "var myFunc = new Function()",
+                "function:myFunc() {}"
+              ],
+              "correctAnswerIndex": 3
+            }
+          ]
+        }
+      },
+      {
+        "title": "Продвинутые темы JavaScript",
+        "description": "Изучение продвинутых концепций и возможностей JavaScript.",
+        "sections": [
+          {
+            "title": "Прототипы и наследование",
+            "content": "Понимание прототипного наследования в JavaScript."
+          },
+          {
+            "title": "Асинхронное программирование",
+            "content": "Callback-функции, Promise, async/await."
+          },
+          {
+            "title": "Работа с DOM",
+            "content": "Манипуляции с элементами страницы, события."
+          }
+        ],
+        "exam": {
+          "questions": [
+            {
+              "question": "Что такое 'hoisting' в JavaScript?",
+              "options": [
+                "Механизм, при котором переменные и функции перемещаются в начало своей области видимости перед выполнением кода",
+                "Техника оптимизации производительности кода",
+                "Метод объединения всех внешних скриптов в один файл",
+                "Процесс компиляции JavaScript-кода в байт-код"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой метод массива используется для преобразования всех элементов массива в строку?",
+              "options": [".push()", ".join()", ".concat()", ".toString()"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Чем отличается ключевое слово 'let' от 'var'?",
+              "options": [
+                "'let' объявляет переменную с блочной областью видимости, в то время как 'var' - с функциональной",
+                "'let' позволяет присваивать значения переменным многократно, а 'var' - нет",
+                "'var' может быть объявлено только в глобальной области видимости",
+                "'let' поддерживает асинхронное программирование, а 'var' - нет"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какое ключевое слово используется для создания константы, значение которой не может быть изменено после объявления?",
+              "options": ["const", "let", "var", "static"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что делает метод 'reduce' массива?",
+              "options": [
+                "Уменьшает размер массива, удаляя элементы, не соответствующие условию",
+                "Преобразует массив в единственное значение, применяя функцию ко всем элементам массива слева направо",
+                "Сортирует элементы массива в обратном порядке",
+                "Возвращает новый массив, содержащий все элементы, прошедшие проверку указанной функцией"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Что такое 'промис' (Promise) в JavaScript?",
+              "options": [
+                "Функция обратного вызова для асинхронных операций",
+                "Переменная, которая может быть изменена позже",
+                "Объект, представляющий завершение (или провал) асинхронной операции",
+                "Техника для обработки исключений"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод используется для создания нового промиса?",
+              "options": [
+                "Promise.new()",
+                "new Promise()",
+                "Promise.create()",
+                "Promise()"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод промиса используется для обработки как успешного выполнения, так и ошибки?",
+              "options": [".finally()", ".catch()", ".then()", ".all()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что такое 'async/await' в JavaScript?",
+              "options": [
+                "Библиотека для асинхронного программирования",
+                "Синтаксис для работы с промисами, позволяющий использовать асинхронный код, как если бы он был синхронным",
+                "Функция обратного вызова для асинхронных операций",
+                "Новый тип данных для асинхронных операций"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод используется для ожидания выполнения всех промисов в массиве?",
+              "options": [
+                "Promise.all()",
+                "Promise.race()",
+                "Promise.each()",
+                "Promise.resolve()"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что такое деструктуризация в JavaScript?",
+              "options": [
+                "Разбиение объекта или массива на переменные",
+                "Удаление свойств из объекта",
+                "Преобразование объекта в массив",
+                "Глубокое копирование объекта"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Как можно задать значение по умолчанию для параметра функции?",
+              "options": [
+                "Используя условный оператор в теле функции",
+                "Используя оператор || при объявлении параметра",
+                "Используя синтаксис присваивания значения по умолчанию в определении параметра",
+                "Это невозможно в JavaScript"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Что такое 'spread operator' в JavaScript?",
+              "options": [
+                "Оператор, позволяющий 'разворачивать' элементы массива или свойства объекта",
+                "Оператор для определения максимального размера массива",
+                "Функция для распространения значений по сети",
+                "Оператор сравнения объектов по их содержимому"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Как в JavaScript создать копию объекта, а не ссылку на него?",
+              "options": [
+                "Используя цикл for...in и копирование каждого свойства в новый объект",
+                "Используя метод Object.clone()",
+                "Используя оператор разворачивания (spread operator) {...object}",
+                "С помощью JSON.parse(JSON.stringify(object))"
+              ],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Что такое 'template literals' в JavaScript?",
+              "options": [
+                "Строки, позволяющие встраивать выражения",
+                "Шаблоны для генерации HTML",
+                "Библиотека для работы со строками",
+                "Функция для компиляции шаблонов"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой оператор используется для условного выполнения выражений в JavaScript?",
+              "options": [
+                "if...else",
+                "switch...case",
+                "?: (тернарный оператор)",
+                "&& (логическое И)"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Что такое Symbol в JavaScript?",
+              "options": [
+                "Новый тип данных, представляющий уникальное и неизменяемое значение",
+                "Функция для создания уникальных идентификаторов",
+                "Переменная, которая может хранить любой тип данных",
+                "Тип данных для работы с валютой и финансами"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что такое Proxy в JavaScript?",
+              "options": [
+                "Паттерн проектирования для управления доступом к объекту",
+                "Объект, позволяющий создавать оболочку для другого объекта и контролировать доступ к нему",
+                "Метод для отправки HTTP-запросов",
+                "Инструмент для работы с сетевыми запросами в браузере"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой метод массива используется для удаления последнего элемента массива и возвращения его значения?",
+              "options": [".pop()", ".push()", ".shift()", ".unshift()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Что из перечисленного не является валидным способом объявления функции в JavaScript?",
+              "options": [
+                "function myFunc() {}",
+                "var myFunc = function() {};",
+                "myFunc => {}",
+                "const myFunc = () => {};"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод используется для добавления одного или нескольких элементов в начало массива?",
+              "options": [".pop()", ".push()", ".shift()", ".unshift()"],
+              "correctAnswerIndex": 3
+            }
+          ]
+        }
+      },
+      {
+        "title": "Современный JavaScript и фреймворки",
+        "description": "Ознакомление с современными стандартами и популярными фреймворками.",
+        "sections": [
+          {
+            "title": "ES6 и новые возможности",
+            "content": "Расширенный синтаксис, новые возможности стандарта ES6."
+          },
+          {
+            "title": "Работа с фреймворками",
+            "content": "Введение в React, Angular и Vue."
+          },
+          {
+            "title": "Инструменты разработки",
+            "content": "Системы контроля версий, сборщики модулей, линтеры."
+          }
+        ],
+        "exam": {
+          "questions": [
+            {
+              "question": "Какой метод используется для создания нового массива из результатов вызова указанной функции для каждого элемента в массиве?",
+              "options": [".map()", ".filter()", ".reduce()", ".forEach()"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой синтаксис используется для объявления асинхронной функции в JavaScript?",
+              "options": [
+                "function*()",
+                "async function()",
+                "() =>",
+                "function async()"
+              ],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой объект используется для хранения состояния и обеспечения реактивности во Vue.js?",
+              "options": ["VueModel", "ReactiveObject", "VueComponent", "data"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какая функция используется для создания стора в Redux?",
+              "options": [
+                "createStore()",
+                "new Store()",
+                "initializeStore()",
+                "configStore()"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой хук React используется для выполнения побочных эффектов в функциональных компонентах?",
+              "options": ["useState", "useEffect", "useContext", "useReducer"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой оператор используется для опциональной цепочки, позволяющий читать значение свойства из глубоко вложенных объектов без явной проверки каждого уровня?",
+              "options": ["??", "&&", "?.", "::"],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Как в JavaScript обозначается шаблонная строка?",
+              "options": ["''", "\"\"", "``", "<>"],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой метод Vue.js используется для условного рендеринга элемента?",
+              "options": ["v-if", "v-show", "v-bind", "v-for"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой из следующих методов массива возвращает новый массив, содержащий все элементы исходного массива, которые удовлетворяют условию, заданному в передаваемой функции?",
+              "options": [".map()", ".filter()", ".reduce()", ".forEach()"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "В каком фреймворке используется термин 'директива'?",
+              "options": ["React", "Angular", "Vue.js", "Svelte"],
+              "correctAnswerIndex": 1
+            },
+            {
+              "question": "Какой из этих фреймворков компилирует приложения в оптимизированный ванильный JavaScript?",
+              "options": ["React", "Angular", "Vue.js", "Svelte"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какой хук React позволяет использовать контекст для передачи данных между компонентами без необходимости пропсов?",
+              "options": ["useState", "useEffect", "useContext", "useReducer"],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой синтаксис используется для деструктуризации объекта в JavaScript?",
+              "options": ["{}", "[]", "()", "<>"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой инструмент используется в React для управления состоянием приложения, предлагающий однонаправленный поток данных?",
+              "options": ["Redux", "Vuex", "Context API", "MobX"],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какой метод массива используется для суммирования всех элементов массива в JavaScript?",
+              "options": [".map()", ".filter()", ".reduce()", ".forEach()"],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой оператор в JavaScript используется для присваивания значения переменной, только если она ещё не имеет значения?",
+              "options": ["=", "==", "===", "??="],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какой API позволяет в JavaScript асинхронно читать содержимое файлов?",
+              "options": [
+                "XMLHttpRequest",
+                "Fetch API",
+                "FileReader",
+                "WebSocket"
+              ],
+              "correctAnswerIndex": 2
+            },
+            {
+              "question": "Какой из этих фреймворков предлагает систему виртуального DOM?",
+              "options": ["React", "Angular", "Vue.js", "Все перечисленные"],
+              "correctAnswerIndex": 3
+            },
+            {
+              "question": "Какая команда используется для создания нового проекта в Angular CLI?",
+              "options": [
+                "ng new",
+                "angular create",
+                "create-angular-app",
+                "ng start"
+              ],
+              "correctAnswerIndex": 0
+            },
+            {
+              "question": "Какая утилита командной строки используется для создания и управления проектами в Vue.js?",
+              "options": ["npm", "Vue CLI", "Webpack", "Yarn"],
+              "correctAnswerIndex": 1
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "userId": "1"
+}

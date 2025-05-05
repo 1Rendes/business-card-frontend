@@ -18,6 +18,8 @@ import css from "./Microphone.module.css";
 
 const Microphone = () => {
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
+  console.log("agentState: ", agentState);
+
   const [connectionDetails, setConnectionDetails] = useState<
     ConnectionDetails | undefined
   >(undefined);
@@ -50,7 +52,23 @@ const Microphone = () => {
               <FaMicrophone />
             </button>
           )}
-          {agentState !== "disconnected" && (
+          {agentState === "initializing" ||
+            (agentState === "connecting" && (
+              <DisconnectButton className={css.microButton}>
+                <div className={css.loader} />
+              </DisconnectButton>
+            ))}
+          {agentState === "listening" && (
+            <DisconnectButton className={css.microButton}>
+              <FaMicrophone className={css.microOn} />
+            </DisconnectButton>
+          )}
+          {agentState === "speaking" && (
+            <DisconnectButton className={css.microButton}>
+              <FaMicrophone className={css.microOn} />
+            </DisconnectButton>
+          )}
+          {agentState === "thinking" && (
             <DisconnectButton className={css.microButton}>
               <FaMicrophone className={css.microOn} />
             </DisconnectButton>
