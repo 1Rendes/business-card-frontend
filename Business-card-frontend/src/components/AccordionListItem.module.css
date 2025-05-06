@@ -1,0 +1,61 @@
+.arrow {
+  width: 30px;
+  height: 30px;
+  color: rgba(150, 186, 254, 0.51);
+  transition: transform 0.15s ease-in-out;
+}
+.openedArrow {
+  transform: rotate(180deg);
+}
+.projectItem {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px 5px 10px;
+  border-radius: 13px;
+  border: 1px solid rgba(150, 186, 254, 0.51);
+  height: 43px;
+  transition: height 0.15s ease-in-out;
+  overflow: hidden;
+}
+.projectItem:hover {
+  background-color: rgba(150, 186, 254, 0.51);
+}
+.opened {
+  height: 80px;
+}
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.projectItemHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.moreInfoButton {
+  background-color: rgba(150, 186, 254, 0.51);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.link {
+  background-color: rgba(150, 186, 254, 0.51);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
