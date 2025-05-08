@@ -3,7 +3,10 @@ import profile from "../images/profile-photo.png";
 import AccordionListItem from "./AccordionListItem";
 import { useState } from "react";
 import clsx from "clsx";
-const Profile = ({ isOpen }: { isOpen: boolean }) => {
+import { HiDotsHorizontal } from "react-icons/hi";
+import Microphone from "./Microphone";
+
+const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
   const [accordionStates, setAccordionStates] = useState({
     first: "closed",
     second: "closed",
@@ -14,7 +17,7 @@ const Profile = ({ isOpen }: { isOpen: boolean }) => {
   });
 
   return (
-    <div className={clsx(css.profile, isOpen && css.profileOpen)}>
+    <div className={clsx(css.profile)}>
       <div className={css.profileCover}>
         <div className={css.firstBlock}>
           <div className={css.nameBlock}>
@@ -115,6 +118,10 @@ const Profile = ({ isOpen }: { isOpen: boolean }) => {
             </ul>
           </div>
           <img className={css.profilePhoto} src={profile} alt="profile" />
+          <div className={css.controls}>
+            <HiDotsHorizontal className={css.dots} onClick={handleFlip} />
+            <Microphone />
+          </div>
         </div>
       </div>
     </div>
