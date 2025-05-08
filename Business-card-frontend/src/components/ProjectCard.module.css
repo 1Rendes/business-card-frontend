@@ -2,6 +2,9 @@
 
 .projectCard {
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 .backdrop {
   background-color: rgba(0, 0, 0, 0.7);
@@ -19,16 +22,20 @@
 .modal {
   position: absolute;
   box-sizing: border-box;
-  max-width: 90%;
+  max-width: 50%;
   margin: 0 16px;
   display: flex;
-  top: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
   flex-direction: column;
   justify-content: center;
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  padding: 20px;
+  padding: 40px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
 }
 .closeButton {
   background-color: transparent;
@@ -56,18 +63,30 @@
   opacity: 0;
 }
 
-.modal {
-  opacity: 0;
-  transform: translateY(-40px) scale(0.98);
-  transition: opacity 0.3s, transform 0.3s;
-}
-
 .modalAfterOpen {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modalBeforeClose {
   opacity: 0;
-  transform: translateY(-40px) scale(0.98);
+  /* transform: translateY(-40px) scale(0.98);
+  transform: translate(-50%, -50%); */
+}
+
+.experienceList {
+  list-style: disc;
+}
+
+.experienceItem {
+  margin-left: 20px;
+}
+.projectCardPreview {
+  height: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.projectCardPreviewContainer {
+  width: 35%;
 }

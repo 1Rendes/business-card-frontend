@@ -111,38 +111,6 @@ const Profile = ({ isOpen }: { isOpen: boolean }) => {
               setAccordionStates={setAccordionStates}
             />
           </ul>
-          <table className={css.table}>
-            <tbody>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>Main stack</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>
-                    JavaScript, TypeScript, React, Next.js, Node.js, MongoDB
-                  </p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>Education</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <a
-                    target="blank"
-                    className={css.projectItem}
-                    href="https://drive.google.com/file/d/11SHbgIBWBGn26p5FSf4-vylxo1p4rRR9/view?usp=drive_link00000000000/view?usp=sharing"
-                  >
-                    GoIT online courses (2024.01 - 2024.12)
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
         <img className={css.profilePhoto} src={profile} alt="profile" />
       </div>
