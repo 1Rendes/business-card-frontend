@@ -22,13 +22,11 @@
 .modal {
   position: absolute;
   box-sizing: border-box;
-  /* max-width: 50%; */
   width: 900px;
-  margin: 0 16px;
   display: flex;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.98);
+  transform: translate(-49%, -50%) scale(0.98);
   flex-direction: column;
   justify-content: center;
   background-color: white;
@@ -66,7 +64,7 @@
 
 .modalAfterOpen {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-49%, -50%) scale(1);
 }
 
 .modalBeforeClose {
@@ -90,4 +88,13 @@
 }
 .projectCardPreviewContainer {
   width: 35%;
+}
+.projectCardTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.projectCardName {
+  margin: auto;
+  margin-bottom: 20px;
 }
