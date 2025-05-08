@@ -21,8 +21,8 @@ const ProjectCard = ({
     first: {
       name: "WebStudio",
       link: "https://1rendes.github.io/goit-markup-hw-06/",
-      goal: "Goal: To master the methods of HTML typesetting in practice and to learn how to use CSS, the first acquaintance with adaptive typesetting",
-      role: "Role: Developer",
+      goal: "To master the methods of HTML typesetting in practice and to learn how to use CSS, the first acquaintance with adaptive typesetting",
+      role: "Developer",
       experienceList: [
         "Learned to use HTML tags for their intended purpose",
         "Understand the principles of CSS",
@@ -35,8 +35,8 @@ const ProjectCard = ({
     second: {
       name: "Watchcharm",
       link: "https://1rendes.github.io/Project-SuperCode/",
-      role: "Role: Developer, team leader",
-      goal: "Goal: Learn to work in a team with strangers on a shared project within a limited timeframe. Participate as a team leader. Put HTML, CSS, and JavaScript into practice.",
+      role: "Developer, team leader",
+      goal: "Learn to work in a team with strangers on a shared project within a limited timeframe. Participate as a team leader. Put HTML, CSS, and JavaScript into practice.",
       experienceList: [
         "Learned how to properly distribute tasks among team members over time",
         "Consolidated HTML and CSS knowledge by completing a task in a limited time",
@@ -48,8 +48,8 @@ const ProjectCard = ({
     third: {
       name: "Portfolio",
       link: "https://1rendes.github.io/Project-SuperScript/",
-      role: "Role: Developer, team leader",
-      goal: "Gole: Improve skills in working in a development team, consolidate Java Script knowledge, complete the project within a limited timeframe",
+      role: "Developer, team leader",
+      goal: "Improve skills in working in a development team, consolidate Java Script knowledge, complete the project within a limited timeframe",
       experienceList: [
         "Learned to work with SASS, use and configure various Java script libraries",
         "Interact with colleagues to solve problems, negotiate, and reach compromises using a shadow solution",
@@ -61,8 +61,8 @@ const ProjectCard = ({
     fourth: {
       name: "Movie-observer",
       link: "https://movie-observer.vercel.app/",
-      role: "Role: Developer",
-      goal: "Goal: To test knowledge of React.js in practice and to improve skills in developing front-end applications",
+      role: "Developer",
+      goal: "To test knowledge of React.js in practice and to improve skills in developing front-end applications",
       experienceList: [
         "Improved practical skills in React.js",
         "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
@@ -74,8 +74,8 @@ const ProjectCard = ({
     fifth: {
       name: "AquaTrack",
       link: "https://aqua-track-duna-front.vercel.app/",
-      role: "Role: Developer, team leader",
-      goal: "Goal: Improve skills in Node.js, React.js and teamwork in a limited timeframe",
+      role: "Developer, team leader",
+      goal: "Improve skills in Node.js, React.js and teamwork in a limited timeframe",
       experienceList: [
         "Improved skills in designing a Full-Stack application",
         "Optimized work with user data",
@@ -88,8 +88,8 @@ const ProjectCard = ({
     sixth: {
       name: "Travel-trucks",
       link: "https://travel-trucks-test-task.vercel.app/",
-      role: "Role: Developer",
-      goal: "Goal: Test knowledge of React.js in practice and to improve skills in developing front-end applications",
+      role: "Developer",
+      goal: "Test knowledge of React.js in practice and to improve skills in developing front-end applications",
       experienceList: [
         "Improved practical skills in React.js",
         "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
@@ -123,9 +123,17 @@ const ProjectCard = ({
         </button>
         <div className={css.projectCard}>
           <div className={css.projectCardTextContent}>
-            <h2>{cardData[order as keyof typeof cardData].name}</h2>
-            <p>{cardData[order as keyof typeof cardData].role}</p>
-            <p>{cardData[order as keyof typeof cardData].goal}</p>
+            <h2 className={css.projectCardName}>
+              {cardData[order as keyof typeof cardData].name}
+            </h2>
+            <p>
+              <b>Role: </b>
+              {cardData[order as keyof typeof cardData].role}
+            </p>
+            <p>
+              <b>Goal: </b>
+              {cardData[order as keyof typeof cardData].goal}
+            </p>
             <p>
               <b>Experience:</b>
             </p>
