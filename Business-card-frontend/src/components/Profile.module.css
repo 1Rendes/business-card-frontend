@@ -1,5 +1,6 @@
 .profile {
   display: flex;
+  max-height: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -7,8 +8,20 @@
   gap: 20px;
   background-color: #fff;
   border-radius: 15px;
-  padding: 50px 100px;
+  padding: 0px;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.59);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 50px 100px;
+  margin-bottom: 100px;
+}
+.profileOpen {
+  display: flex;
+  max-height: 1500px;
+  opacity: 1;
+  pointer-events: auto;
 }
 .firstBlock {
   display: flex;
@@ -24,7 +37,7 @@
   margin-bottom: auto;
 }
 .nameBlock {
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -32,7 +45,7 @@
 }
 .stringHeader {
   font-weight: bold;
-  width: 250px;
+  width: 150px;
 }
 .string {
   display: flex;
@@ -40,4 +53,19 @@
 }
 .table {
   width: 100%;
+}
+
+.projectsList {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+}
+.projectItem {
+  background-color: transparent;
+  padding: 5px 15px;
+  border-radius: 13px;
+  text-decoration: underline;
+}
+.projectItem:hover {
+  background-color: rgba(150, 186, 254, 0.51);
 }

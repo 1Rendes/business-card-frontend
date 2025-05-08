@@ -15,7 +15,7 @@ function App() {
   return (
     <Container>
       <BasicCard handleOpenCards={handleOpenCards} />
-      {isOpen && <Profile />}
+      <Profile isOpen={isOpen} />
     </Container>
   );
 }
