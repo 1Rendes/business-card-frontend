@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoIosSend } from "react-icons/io";
 
-const WEBSOCKET_URL = "ws://business-card-backend-uwr3.onrender.com/ws";
+const WEBSOCKET_URL = "wss://business-card-backend-uwr3.onrender.com/ws";
 
 interface ChatMessage {
   content: string;
