@@ -1,12 +1,14 @@
 import css from "./Profile.module.css";
-import profile from "../images/profile-photo.png";
 import AccordionListItem from "./AccordionListItem";
 import { useState } from "react";
 import clsx from "clsx";
 import { HiDotsHorizontal } from "react-icons/hi";
-import Microphone from "./Microphone";
+import { useRef, useEffect } from "react";
+// ...остальной импорт...
 
 const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
+  const profileRef = useRef<HTMLDivElement>(null);
+
   const [accordionStates, setAccordionStates] = useState({
     first: "closed",
     second: "closed",
@@ -16,28 +18,40 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
     sixth: "closed",
   });
 
+  useEffect(() => {
+    const setBodyHeight = (): void => {
+      if (profileRef.current) {
+        document.body.style.height = `${
+          profileRef.current.offsetHeight + 450
+        }px`;
+      }
+    };
+    setBodyHeight();
+    window.addEventListener("resize", setBodyHeight);
+    return () => {
+      window.removeEventListener("resize", setBodyHeight);
+      document.body.style.height = ""; // сброс при размонтировании
+    };
+  }, []);
+
   return (
-    <div className={clsx(css.profile)}>
+    <div ref={profileRef} className={clsx(css.profile)}>
       <div className={css.profileCover}>
+        <div className={css.controls}>
+          <HiDotsHorizontal className={css.dots} onClick={handleFlip} />
+        </div>
+
         <div className={css.firstBlock}>
           <div className={css.nameBlock}>
             <h1>Volodymyr Solonin</h1>
             <p>
-              is a full-stack web developer with expertise in React, Next.js,
-              TypeScript, Node.js (Fastify), and MongoDB. He has practical
-              experience working in team environments, contributing to both
-              frontend and backend parts of projects. His skills cover the
-              development of landing pages, full-scale applications, and
-              microservices for larger systems. Volodymyr actively works with AI
-              technologies, building applications that integrate frameworks such
-              as LangChain and LiveKit. He utilizes Redis for efficient caching
-              strategies and focuses on creating scalable and maintainable
-              architectures. His interests include studying the influence of AI
-              on software development practices and applying these insights to
-              real-world projects. Volodymyr consistently aims to deliver
-              optimized, robust solutions that meet modern development
-              standards.
+              is a full-stack web developer with hands-on experience in building
+              scalable applications and working in collaborative team
+              environments. His work spans both frontend and backend, with a
+              particular interest in the integration of AI technologies into web
+              development.{" "}
             </p>
+            <h3>Core competencies:</h3>
             <table className={css.table}>
               <tbody>
                 <tr className={css.string}>
@@ -49,6 +63,81 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                   <td className={css.stringData}>
                     <p>
                       JavaScript, TypeScript, React, Next.js, Node.js, MongoDB
+                    </p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Frontend</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>React, Next.js, TypeScript</p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Backend</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>Node.js, Fastify, MongoDB</p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Architecture</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>Full-scale apps, landing pages, microservices</p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>AI</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>LangChain, LiveKit</p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Caching and performance</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>Redis</p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Development practices</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>
+                      Scalable architecture, maintainability, team collaboration
+                    </p>
+                  </td>
+                </tr>
+                <tr className={css.string}>
+                  <td className={css.stringHeader}>
+                    <p>
+                      <b>Areas of interest</b>
+                    </p>
+                  </td>
+                  <td className={css.stringData}>
+                    <p>
+                      AI impact on development workflows and real-world
+                      applications
                     </p>
                   </td>
                 </tr>
@@ -79,6 +168,7 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="first"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Landing page for a web studio, adaptive typesetting, HTML, CSS"
               />
               <AccordionListItem
                 href="https://1rendes.github.io/Project-SuperCode/"
@@ -86,6 +176,7 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="second"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Landing page for a watch charm, adaptive typesetting, HTML, CSS, JavaScript"
               />
               <AccordionListItem
                 href="https://1rendes.github.io/Project-SuperScript/"
@@ -93,6 +184,7 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="third"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Portfolio page, adaptive typesetting, HTML, CSS, JavaScript, SASS"
               />
               <AccordionListItem
                 href="https://movie-observer.vercel.app/"
@@ -100,6 +192,7 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="fourth"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Web application for searching movies, series, actors. Created on existing API"
               />
               <AccordionListItem
                 href="https://aqua-track-duna-front.vercel.app/"
@@ -107,6 +200,7 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="fifth"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Web application for tracking daily water intake. Full-stack project"
               />
               <AccordionListItem
                 href="https://travel-trucks-test-task.vercel.app/"
@@ -114,14 +208,20 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
                 order="sixth"
                 accordionStates={accordionStates}
                 setAccordionStates={setAccordionStates}
+                shortDescription="Web application for searching trucks for transport. Created on existing API"
               />
             </ul>
+            <h3>Contact information:</h3>
+            <div className={css.contactInfo}>
+              <a href="tel:01717494053" className={css.address}>
+                <b>Mobil.:</b> 01717494053
+              </a>
+              <a href="mailto:petrpetrovv123@gmail.com" className={css.address}>
+                <b>Email:</b> petrpetrovv123@gmail.com
+              </a>
+            </div>
           </div>
-          <img className={css.profilePhoto} src={profile} alt="profile" />
-          <div className={css.controls}>
-            <HiDotsHorizontal className={css.dots} onClick={handleFlip} />
-            <Microphone />
-          </div>
+          {/* <img className={css.profilePhoto} src={profile} alt="profile" /> */}
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { HiDotsHorizontal } from "react-icons/hi";
 import css from "./BasicCard.module.css";
-import Microphone from "./Microphone";
 
 const BasicCard = ({ handleOpenCards }: { handleOpenCards: () => void }) => {
   return (
@@ -24,7 +23,6 @@ const BasicCard = ({ handleOpenCards }: { handleOpenCards: () => void }) => {
           >
             Github
           </a>
-          <Microphone />
           <HiDotsHorizontal
             className={css.dots}
             onClick={() => {

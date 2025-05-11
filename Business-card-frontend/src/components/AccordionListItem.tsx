@@ -11,12 +11,14 @@ const AccordionListItem = ({
   order,
   accordionStates,
   setAccordionStates,
+  shortDescription,
 }: {
   href: string;
   name: string;
   order: keyof AccordionStates;
   accordionStates: AccordionStates;
   setAccordionStates: Dispatch<SetStateAction<AccordionStates>>;
+  shortDescription: string;
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
@@ -33,7 +35,9 @@ const AccordionListItem = ({
       }
     >
       <div className={css.projectItemHeader}>
-        <p>{name}</p>
+        <p>
+          <b>{name}</b>
+        </p>
         <IoIosArrowDropdownCircle
           className={clsx(
             css.arrow,
@@ -42,26 +46,29 @@ const AccordionListItem = ({
         />
       </div>
       {accordionStates[order] === "opened" && (
-        <div className={css.linkContainer}>
-          <a
-            target="blank"
-            className={css.link}
-            href={href}
-            onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-              event.stopPropagation();
-            }}
-          >
-            Visit project page
-          </a>
-          <a
-            className={css.link}
-            onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-              event.stopPropagation();
-              setModalOpen(true);
-            }}
-          >
-            More info...
-          </a>
+        <div className={css.openedInfo}>
+          <p>{shortDescription}</p>
+          <div className={css.linkContainer}>
+            <a
+              target="blank"
+              className={css.link}
+              href={href}
+              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                event.stopPropagation();
+              }}
+            >
+              Visit project page
+            </a>
+            <a
+              className={css.link}
+              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                event.stopPropagation();
+                setModalOpen(true);
+              }}
+            >
+              More info...
+            </a>
+          </div>
         </div>
       )}
       {modalOpen && (
