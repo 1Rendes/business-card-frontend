@@ -1,7 +1,7 @@
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import css from "./AccordionListItem.module.css";
 import { AccordionStates } from "../types/accordion-states";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import clsx from "clsx";
 import ProjectCard from "./ProjectCard";
 
@@ -21,6 +21,18 @@ const AccordionListItem = ({
   shortDescription: string;
 }) => {
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modalOpen]);
+
   return (
     <li
       className={clsx(
