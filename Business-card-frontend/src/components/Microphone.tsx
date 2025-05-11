@@ -16,7 +16,7 @@ import { FaMicrophone } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import css from "./Microphone.module.css";
 
-const Microphone = () => {
+const Microphone = ({ isFlipped }: { isFlipped: boolean }) => {
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
   console.log("agentState: ", agentState);
 
@@ -30,7 +30,9 @@ const Microphone = () => {
   }, []);
 
   return (
-    <div className={css.microphone}>
+    <div
+      className={`${css.microphone} ${isFlipped ? css.microphoneFlipped : ""}`}
+    >
       <LiveKitRoom
         token={connectionDetails?.participantToken}
         serverUrl={connectionDetails?.serverUrl}

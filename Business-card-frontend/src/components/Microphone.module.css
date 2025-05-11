@@ -1,7 +1,12 @@
 .microphone {
   position: absolute;
-  top: 179px;
-  right: 40px;
+  top: 430px;
+  left: 590px;
+  transition: all 0.5s ease-in-out;
+}
+.microphoneFlipped {
+  top: 103px;
+  left: 160px;
 }
 .microButton {
   background-color: transparent;
