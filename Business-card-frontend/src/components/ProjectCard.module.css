@@ -6,6 +6,11 @@
   justify-content: space-between;
   gap: 20px;
 }
+@media (max-width: 767px) {
+  .projectCard {
+    flex-direction: column;
+  }
+}
 .backdrop {
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -26,7 +31,7 @@
   display: flex;
   top: 50%;
   left: 50%;
-  transform: translate(-49%, -50%) scale(0.98);
+  transform: translate(-50%, -50%) scale(0.98);
   flex-direction: column;
   justify-content: center;
   background-color: white;
@@ -35,6 +40,18 @@
   padding: 40px;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
+}
+@media screen and (max-width: 1199px) {
+  .modal {
+    width: 758px;
+  }
+}
+
+@media (max-width: 767px) {
+  .modal {
+    padding: 20px;
+    width: 95%;
+  }
 }
 .closeButton {
   background-color: transparent;
@@ -64,7 +81,7 @@
 
 .modalAfterOpen {
   opacity: 1;
-  transform: translate(-49%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modalBeforeClose {
@@ -80,6 +97,7 @@
 .experienceItem {
   margin-left: 20px;
 }
+
 .projectCardPreview {
   height: 250px;
   border-radius: 15px;
@@ -87,7 +105,15 @@
   overflow: hidden;
 }
 .projectCardPreviewContainer {
-  width: 35%;
+  width: 45%;
+}
+@media (max-width: 767px) {
+  .projectCardPreviewContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 .projectCardTextContent {
   display: flex;

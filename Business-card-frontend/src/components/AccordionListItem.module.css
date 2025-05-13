@@ -25,6 +25,11 @@
 .opened {
   height: 115px;
 }
+@media (max-width: 1200px) {
+  .opened {
+    height: 135px;
+  }
+}
 .openedInfo {
   width: 100%;
   display: flex;

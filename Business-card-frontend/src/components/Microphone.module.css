@@ -4,9 +4,21 @@
   left: 590px;
   transition: all 0.5s ease-in-out;
 }
+@media (max-width: 1200px) {
+  .microphone {
+    top: 280px;
+    left: 290px;
+  }
+}
 .microphoneFlipped {
   top: 103px;
   left: 160px;
+}
+@media (max-width: 1200px) {
+  .microphoneFlipped {
+    top: 81px;
+    left: 70px;
+  }
 }
 .microButton {
   background-color: transparent;
