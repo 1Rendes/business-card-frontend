@@ -13,7 +13,7 @@ function App() {
   const [cardWidth, setCardWidth] = useState<number>(0);
   const [isChatVisible, setIsChatVisible] = useState<boolean>(false);
   const [isConnected, setIsConnected] = useState<boolean>(false);
-  const touchStartX = useRef<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   useLayoutEffect(() => {
     const frontWidth = frontRef.current?.offsetWidth || 0;
@@ -35,17 +35,20 @@ function App() {
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>): void => {
-    touchStartX.current = e.touches[0].clientX;
+    touchStart.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
   };
 
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>): void => {
-    if (touchStartX.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (Math.abs(deltaX) > 60) {
-      // 60px — минимальная длина свайпа
+    if (!touchStart.current) return;
+    const deltaX = e.changedTouches[0].clientX - touchStart.current.x;
+    const deltaY = e.changedTouches[0].clientY - touchStart.current.y;
+    if (Math.abs(deltaX) > 60 && Math.abs(deltaX) > Math.abs(deltaY)) {
       handleFlip();
     }
-    touchStartX.current = null;
+    touchStart.current = null;
   };
 
   return (

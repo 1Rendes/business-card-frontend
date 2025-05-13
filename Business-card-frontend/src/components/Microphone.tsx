@@ -18,7 +18,6 @@ import css from "./Microphone.module.css";
 
 const Microphone = ({ isFlipped }: { isFlipped: boolean }) => {
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
-  console.log("agentState: ", agentState);
 
   const [connectionDetails, setConnectionDetails] = useState<
     ConnectionDetails | undefined
