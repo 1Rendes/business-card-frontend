@@ -10,9 +10,21 @@
   left: 588px;
   transition: all 0.5s ease-in-out;
 }
+@media (max-width: 1200px) {
+  .chatButton {
+    top: 240px;
+    left: 288px;
+  }
+}
 .chatButtonFlipped {
   top: 103px;
   left: 210px;
+}
+@media (max-width: 1200px) {
+  .chatButtonFlipped {
+    top: 81px;
+    left: 113px;
+  }
 }
 .closeButton {
   background-color: transparent;
@@ -39,7 +51,7 @@
   opacity: 0;
   position: fixed;
   right: 40px;
-  bottom: 110px;
+  bottom: 80px;
   z-index: 2;
   background: #fff;
   box-shadow: 0 8px 32px 0 rgba(60, 80, 180, 0.18);
@@ -53,7 +65,14 @@
   transition: opacity 0.2s, box-shadow 0.2s;
   pointer-events: none;
 }
-
+@media (max-width: 768px) {
+  .chatContainer {
+    width: 95%;
+    height: 90%;
+    bottom: 5%;
+    left: 2.5%;
+  }
+}
 .chatContainerVisible {
   opacity: 1;
   pointer-events: auto;

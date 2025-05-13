@@ -2,6 +2,11 @@
   perspective: 4000px;
   display: inline-block;
 }
+@media (max-width: 1200px) {
+  .flipCardContainer {
+    width: 350px;
+  }
+}
 .flipCardInner {
   position: relative;
   height: 100%;

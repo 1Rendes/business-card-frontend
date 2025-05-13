@@ -8,7 +8,6 @@
   gap: 20px;
   background-color: #fff;
   border-radius: 15px;
-  padding: 0px;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.59);
   transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
   overflow: hidden;
@@ -16,13 +15,30 @@
   display: flex;
   opacity: 1;
   pointer-events: auto;
-}
-.profileCover {
   padding: 50px 100px;
-  background-color: rgba(211, 211, 253, 0.51);
+  /* background-color: rgb(242, 242, 255); */
+}
+.mainDescriptionBlock {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .profile {
+    width: 350px;
+    padding: 30px 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .mainDescriptionBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .controls {
   background-color: rgba(150, 186, 254, 0.51);
+  width: 100%;
   border-radius: 20px;
   padding: 6px;
   display: flex;
@@ -30,6 +46,11 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 30px;
+}
+@media (max-width: 1200px) {
+  .controls {
+    margin-bottom: 0px;
+  }
 }
 .dots {
   width: 30px;
@@ -51,9 +72,10 @@
 
 .profilePhoto {
   width: 150px;
-  height: 200px;
+  height: 150px;
   border-radius: 5%;
   margin-bottom: auto;
+  float: right;
 }
 .nameBlock {
   /* width: 600px; */
@@ -62,14 +84,34 @@
   gap: 30px;
   text-align: justify;
 }
+/* .tableBody {
+  display: flex;
+  flex-direction: column;
+} */
 .stringHeader {
   font-weight: bold;
   width: 200px;
+}
+@media (max-width: 1200px) {
+  .stringHeader {
+    width: 100%;
+  }
 }
 .string {
   display: flex;
   width: 100%;
 }
+@media (max-width: 1200px) {
+  .string {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .stringData {
+    text-align: left;
+    width: 100%;
+  }
+}
+
 .table {
   width: 100%;
 }
@@ -85,6 +127,11 @@
   padding: 5px 15px;
   border-radius: 13px;
   text-decoration: underline;
+}
+@media (max-width: 1200px) {
+  .projectItem {
+    padding: 0px;
+  }
 }
 .projectItem:hover {
   background-color: rgba(150, 186, 254, 0.51);
