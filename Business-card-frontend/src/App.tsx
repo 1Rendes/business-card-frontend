@@ -5,6 +5,7 @@ import css from "./components/FlipCard.module.css";
 import Microphone from "./components/Microphone";
 import Chat from "./components/Chat";
 import ChatButton from "./components/ChatButton";
+
 function App() {
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const frontRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,7 @@ function App() {
   const [cardWidth, setCardWidth] = useState<number>(0);
   const [isChatVisible, setIsChatVisible] = useState<boolean>(false);
   const [isConnected, setIsConnected] = useState<boolean>(false);
+  const touchStartX = useRef<number | null>(null);
 
   useLayoutEffect(() => {
     const frontWidth = frontRef.current?.offsetWidth || 0;
@@ -32,9 +34,28 @@ function App() {
     setIsFlipped((prev) => !prev);
   };
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>): void => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>): void => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(deltaX) > 60) {
+      // 60px — минимальная длина свайпа
+      handleFlip();
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <>
-      <div className={css.flipCardContainer} style={{ width: cardWidth }}>
+      <div
+        className={css.flipCardContainer}
+        style={{ width: cardWidth }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className={`${css.flipCardInner} ${isFlipped ? css.flipped : ""}`}>
           <div className={css.flipCardFront} ref={frontRef}>
             <BasicCard handleOpenCards={handleFlip} />
