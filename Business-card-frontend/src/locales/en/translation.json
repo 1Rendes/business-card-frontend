@@ -1,0 +1,90 @@
+{
+  "navigation": {
+    "visitenkarte": "Business Card",
+    "lebenslauf": "About me...",
+    "aiChat": "Talk to my AI"
+  },
+  "footer": {
+    "impressum": "Imprint",
+    "datenschutz": "Privacy Policy"
+  },
+  "basicCard": {
+    "profession": "Full Stack Developer",
+    "address": {
+      "street": "Hauptstraße 100",
+      "city": "33647 Bielefeld",
+      "mobile": "Mobile:+49 (0)171 749 4053",
+      "email": "mail@volo.rocks",
+      "github": "Github"
+    }
+  },
+  "secondCard": {
+    "scanContact": "Scan my contact"
+  },
+  "chat": {
+    "disconnected": "Disconnected",
+    "assistant": "assistant",
+    "placeholder": "Enter message..."
+  },
+  "impressum": {
+    "title": "Imprint",
+    "tmgInfo": "Information according to § 5 TMG",
+    "contact": "Contact",
+    "phone": "Phone:",
+    "email": "E-Mail:",
+    "github": "GitHub:",
+    "responsible": "Responsible for content according to § 55 Abs. 2 RStV",
+    "liabilityContent": "Liability for Content",
+    "liabilityContentText": "As a service provider, I am responsible for my own content on these pages according to general laws pursuant to § 7 Abs.1 TMG. According to §§ 8 to 10 TMG, however, as a service provider, I am not under obligation to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.",
+    "liabilityLinks": "Liability for Links",
+    "liabilityLinksText": "My offer contains links to external websites of third parties, on whose contents I have no influence. Therefore, I cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the contents of the linked pages.",
+    "copyright": "Copyright",
+    "copyrightText": "The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator.",
+    "privacy": "Privacy",
+    "privacyText": "Further information on data protection can be found in my privacy policy."
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "overview": "1. Data Protection at a Glance",
+    "generalInfo": "General Information",
+    "generalInfoText": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is all data with which you can be personally identified. Detailed information on the subject of data protection can be found in our privacy policy listed below this text.",
+    "dataCollection": "2. Data Collection on this Website",
+    "responsibleForData": "Who is responsible for data collection on this website?",
+    "responsibleForDataText": "Data processing on this website is carried out by the website operator. You can find their contact details in the section \"Note on the responsible party\" in this privacy policy.",
+    "howWeCollect": "How do we collect your data?",
+    "howWeCollectText1": "On the one hand, your data is collected by you providing it to us. This can be data that you enter in a contact form, for example.",
+    "howWeCollectText2": "Other data is collected automatically or after your consent when you visit the website by our IT systems. These are mainly technical data (e.g. internet browser, operating system or time of page access). This data is collected automatically as soon as you enter this website.",
+    "hosting": "3. Hosting",
+    "hostingText": "We host the content of our website with the following provider:",
+    "hostingProvider": "Vercel Inc.",
+    "hostingAddress": "340 S Lemon Ave #4133",
+    "hostingCity": "Walnut, CA 91789",
+    "hostingCountry": "USA",
+    "hostingPrivacy": "The collection and processing of your data takes place exclusively in the EU and largely complies with German and European data protection standards.",
+    "generalNotes": "4. General Information and Mandatory Information",
+    "privacyTitle": "Data Protection",
+    "privacyText1": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the legal data protection regulations and this privacy policy.",
+    "privacyText2": "When you use this website, various personal data is collected. Personal data is data with which you can be personally identified. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.",
+    "privacyText3": "We point out that data transmission on the Internet (e.g. when communicating by e-mail) can have security gaps. Complete protection of data against access by third parties is not possible.",
+    "serverLogs": "5. Data Collection on this Website",
+    "serverLogFiles": "Server Log Files",
+    "serverLogText": "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are:",
+    "serverLogItems": [
+      "Browser type and browser version",
+      "Operating system used",
+      "Referrer URL",
+      "Hostname of the accessing computer",
+      "Time of server request",
+      "IP address"
+    ],
+    "serverLogNote": "A combination of this data with other data sources is not carried out.",
+    "contactForm": "6. Contact Form",
+    "contactFormText": "If you send us inquiries via the contact form, your details from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.",
+    "plugins": "7. Plugins and Tools",
+    "googleFonts": "Google Fonts (local hosting)",
+    "googleFontsText": "This page uses so-called Google Fonts for the uniform display of fonts, which are provided by Google. The Google Fonts are installed locally. A connection to Google servers does not take place.",
+    "responsibleEntity": "8. Note on the responsible party",
+    "responsibleEntityText": "The responsible party for data processing on this website is:",
+    "responsibleEntityNote": "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (e.g. names, e-mail addresses, etc.)."
+  }
+}

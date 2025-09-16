@@ -1,29 +1,67 @@
-.microphone {
+.microphoneContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.microphoneScaleContainer {
   position: absolute;
-  top: 430px;
-  left: 590px;
+  width: 100%;
+  top: 420px;
+  scale: 0.1;
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 1200px) {
-  .microphone {
-    top: 280px;
-    left: 290px;
-  }
+.microphoneScaleContainer .microphoneContainer {
+  pointer-events: none;
 }
-.microphoneFlipped {
-  top: 103px;
-  left: 160px;
+.microphoneScaleContainer .microphoneContainer .microphoneSwitchButton {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.microphoneScaleContainer:hover {
+  scale: 0.2;
+  cursor: pointer;
+}
+.microphoneScaleContainerOpen {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  scale: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.microphoneSwitchButton {
+  opacity: 1;
+  position: relative;
+  width: 80px;
+  height: 40px;
+  background-color: #6d81c4;
+  border-radius: 20px;
+  transition: opacity 0.5s ease-in-out, background-color 0.2s ease-in-out;
+}
+.microphoneSwitchButtonOn {
+  background-color: #83c46d;
+  transition: background-color 0.2s ease-in-out;
+}
+.microphoneSwitchRound {
+  transition: left 0.2s ease-in-out;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.microphoneSwitchRoundOn {
+  left: 45px;
+  transition: left 0.2s ease-in-out;
 }
 @media (max-width: 1200px) {
-  .microphoneFlipped {
-    top: 81px;
-    left: 70px;
-  }
 }
 .microButton {
   background-color: transparent;
-  width: 40px;
-  height: 40px;
 }
 .microOn {
   animation: pulseColor 2s infinite;
@@ -41,7 +79,7 @@
   }
 }
 .loader {
-  width: 25px;
+  width: 300px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid #000;

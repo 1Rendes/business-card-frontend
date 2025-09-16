@@ -1,12 +1,10 @@
+import { useState, useRef, useEffect, JSX } from "react";
 import css from "./Profile.module.css";
 import AccordionListItem from "./AccordionListItem";
-import { useState } from "react";
 import clsx from "clsx";
-import { HiDotsHorizontal } from "react-icons/hi";
-import { useRef, useEffect } from "react";
 import profile from "../images/profile.png";
 
-const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
+const Profile = (): JSX.Element => {
   const profileRef = useRef<HTMLDivElement>(null);
 
   const [accordionStates, setAccordionStates] = useState({
@@ -36,9 +34,6 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
 
   return (
     <div ref={profileRef} className={clsx(css.profile)}>
-      <div className={css.controls}>
-        <HiDotsHorizontal className={css.dots} onClick={handleFlip} />
-      </div>
       <div className={css.firstBlock}>
         <div className={css.nameBlock}>
           <div className={css.mainDescriptionBlock}>
@@ -216,11 +211,11 @@ const Profile = ({ handleFlip }: { handleFlip: () => void }) => {
           </ul>
           <h3>Contact information:</h3>
           <div className={css.contactInfo}>
-            <a href="tel:01717494053" className={css.address}>
-              <b>Mobil.:</b> 01717494053
+            <a href="tel:+491717494053" className={css.address}>
+              <b>Mobil.:</b> +49 (0)171 749 4053
             </a>
-            <a href="mailto:petrpetrovv123@gmail.com" className={css.address}>
-              <b>Email:</b> petrpetrovv123@gmail.com
+            <a href="mailto:mail@volo.rocks" className={css.address}>
+              <b>Email:</b> mail@volo.rocks
             </a>
           </div>
         </div>
