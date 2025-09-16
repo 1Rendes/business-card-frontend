@@ -1,0 +1,118 @@
+.navigation {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.navContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+.navButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.languageButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navButton {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
+  min-width: 160px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navButton.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  font-weight: 500;
+}
+
+.navButton.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.languageButton {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.languageButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.languageButton.languageActive {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  font-weight: 600;
+}
+
+.languageButton.languageActive:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .navButtons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navButton {
+    width: 100%;
+    max-width: 250px;
+    min-width: 200px;
+  }
+
+  .languageButtons {
+    justify-content: center;
+  }
+}

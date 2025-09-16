@@ -10,22 +10,6 @@
   left: 588px;
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 1200px) {
-  .chatButton {
-    top: 240px;
-    left: 288px;
-  }
-}
-.chatButtonFlipped {
-  top: 103px;
-  left: 210px;
-}
-@media (max-width: 1200px) {
-  .chatButtonFlipped {
-    top: 81px;
-    left: 113px;
-  }
-}
 .closeButton {
   background-color: transparent;
   border: none;
@@ -48,34 +32,17 @@
 }
 
 .chatContainer {
-  opacity: 0;
-  position: fixed;
-  right: 40px;
-  bottom: 80px;
+  box-shadow: 5px 9px 20px 2px #313131;
   z-index: 2;
   background: #fff;
   box-shadow: 0 8px 32px 0 rgba(60, 80, 180, 0.18);
   border-radius: 18px;
   overflow: hidden;
-  width: 380px;
-  max-width: 95vw;
-  height: 470px;
+  height: 570px;
+  width: 540px;
   display: flex;
   flex-direction: column;
-  transition: opacity 0.2s, box-shadow 0.2s;
-  pointer-events: none;
-}
-@media (max-width: 768px) {
-  .chatContainer {
-    width: 95%;
-    height: 90%;
-    bottom: 5%;
-    left: 2.5%;
-  }
-}
-.chatContainerVisible {
-  opacity: 1;
-  pointer-events: auto;
+  flex-shrink: 0;
 }
 
 .chatMessages {

@@ -15,68 +15,102 @@ import { useCallback, useEffect, useState } from "react";
 import { FaMicrophone } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import css from "./Microphone.module.css";
+import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
-const Microphone = ({ isFlipped }: { isFlipped: boolean }) => {
+const Microphone = ({ isChatChoosen }: { isChatChoosen: boolean }) => {
+  const { i18n } = useTranslation();
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
+  const [isMicroClicked, setIsMicroClicked] = useState<boolean>(false);
 
   const [connectionDetails, setConnectionDetails] = useState<
     ConnectionDetails | undefined
   >(undefined);
-
+  console.log("connectionDetails: ", connectionDetails);
   const onConnectButtonClicked = useCallback(async () => {
-    const newDetails = await getConnectionDetails();
+    console.log("onConnectButtonClicked");
+    if (isMicroClicked) {
+      setIsMicroClicked(false);
+      setConnectionDetails(undefined);
+      return;
+    }
+    setIsMicroClicked(true);
+    const newDetails = await getConnectionDetails(i18n.language);
     setConnectionDetails(newDetails);
-  }, []);
+  }, [isMicroClicked]);
+
+  useEffect(() => {
+    if (isChatChoosen) {
+      setConnectionDetails(undefined);
+      setIsMicroClicked(false);
+    }
+    return () => {
+      setConnectionDetails(undefined);
+      setIsMicroClicked(false);
+    };
+  }, [isChatChoosen]);
 
   return (
-    <div
-      className={`${css.microphone} ${isFlipped ? css.microphoneFlipped : ""}`}
-    >
-      <LiveKitRoom
-        token={connectionDetails?.participantToken}
-        serverUrl={connectionDetails?.serverUrl}
-        connect={connectionDetails !== undefined}
-        audio={true}
-        video={false}
-        onMediaDeviceFailure={onDeviceFailure}
-        onDisconnected={() => {
-          setConnectionDetails(undefined);
-        }}
-      >
-        <SimpleVoiceAssistant onStateChange={setAgentState} />
-        <IconContext.Provider value={{ className: "microphone-icon-default" }}>
-          {agentState === "disconnected" && (
-            <button
-              className={css.microButton}
-              onClick={onConnectButtonClicked}
-            >
-              <FaMicrophone />
-            </button>
-          )}
-          {agentState === "initializing" ||
-            (agentState === "connecting" && (
+    <div className={css.microphoneContainer} onClick={onConnectButtonClicked}>
+      <div className={css.microphone}>
+        <LiveKitRoom
+          token={connectionDetails?.participantToken}
+          serverUrl={connectionDetails?.serverUrl}
+          connect={connectionDetails !== undefined}
+          audio={true}
+          video={false}
+          onMediaDeviceFailure={onDeviceFailure}
+          onDisconnected={() => {
+            setConnectionDetails(undefined);
+          }}
+        >
+          <SimpleVoiceAssistant onStateChange={setAgentState} />
+          <IconContext.Provider
+            value={{ className: "microphone-icon-default" }}
+          >
+            {agentState === "disconnected" && (
+              <button className={css.microButton}>
+                <FaMicrophone />
+              </button>
+            )}
+            {agentState === "initializing" ||
+              (agentState === "connecting" && (
+                <DisconnectButton className={css.microButton}>
+                  <div className={css.loader} />
+                </DisconnectButton>
+              ))}
+            {agentState === "listening" && (
               <DisconnectButton className={css.microButton}>
-                <div className={css.loader} />
+                <FaMicrophone className={css.microOn} />
               </DisconnectButton>
-            ))}
-          {agentState === "listening" && (
-            <DisconnectButton className={css.microButton}>
-              <FaMicrophone className={css.microOn} />
-            </DisconnectButton>
+            )}
+            {agentState === "speaking" && (
+              <DisconnectButton className={css.microButton}>
+                <FaMicrophone className={css.microOn} />
+              </DisconnectButton>
+            )}
+            {agentState === "thinking" && (
+              <DisconnectButton className={css.microButton}>
+                <FaMicrophone className={css.microOn} />
+              </DisconnectButton>
+            )}
+          </IconContext.Provider>
+          <RoomAudioRenderer />
+        </LiveKitRoom>
+      </div>
+      <div
+        className={clsx(
+          css.microphoneSwitchButton,
+          isMicroClicked ? css.microphoneSwitchButtonOn : ""
+        )}
+      >
+        <div
+          className={clsx(
+            css.microphoneSwitchRound,
+            isMicroClicked ? css.microphoneSwitchRoundOn : ""
           )}
-          {agentState === "speaking" && (
-            <DisconnectButton className={css.microButton}>
-              <FaMicrophone className={css.microOn} />
-            </DisconnectButton>
-          )}
-          {agentState === "thinking" && (
-            <DisconnectButton className={css.microButton}>
-              <FaMicrophone className={css.microOn} />
-            </DisconnectButton>
-          )}
-        </IconContext.Provider>
-        <RoomAudioRenderer />
-      </LiveKitRoom>
+        ></div>
+      </div>
     </div>
   );
 };

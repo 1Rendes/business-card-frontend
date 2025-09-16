@@ -19,10 +19,13 @@ export type ConnectionDetails = {
 
 const axiosInstance = axios.create({
   baseURL: "https://business-card-backend-uwr3.onrender.com",
+  // baseURL: "http://localhost:3001",
 });
 
-export const getConnectionDetails = async () => {
-  const response = await axiosInstance.get(`/get-livekit-token`);
+export const getConnectionDetails = async (language: string) => {
+  const response = await axiosInstance.get(
+    `/get-livekit-token?language=${language}`
+  );
   const decoded: TokenPayload = jwtDecode(response.data.token);
   const token = response.data.token;
   const serverUrl = JSON.parse(decoded.metadata).livekitUrl;

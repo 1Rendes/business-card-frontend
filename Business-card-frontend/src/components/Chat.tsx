@@ -2,49 +2,51 @@ import { useState, useRef, useEffect, FormEvent, JSX } from "react";
 import css from "./Chat.module.css";
 import ReactMarkdown from "react-markdown";
 import clsx from "clsx";
-import { IoCloseSharp } from "react-icons/io5";
 import { IoIosSend } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
-const WEBSOCKET_URL = "wss://business-card-backend-uwr3.onrender.com/ws";
+const WEBSOCKET_URL =
+  "wss://business-card-backend-uwr3.onrender.com/ws?language=";
+// const WEBSOCKET_URL = "ws://localhost:3001/ws?language=";
 
 interface ChatMessage {
   content: string;
   type: string;
 }
 
-const Chat = ({
-  isConnected,
-  isChatVisible,
-  handleConnect,
-}: {
-  isConnected: boolean;
-  isChatVisible: boolean;
-  handleConnect: () => void;
-}): JSX.Element => {
+const Chat = (): JSX.Element => {
+  const { t, i18n } = useTranslation();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isWaitForAssistantAnswer, setIsWaitForAssistantAnswer] =
     useState<boolean>(false);
   const [input, setInput] = useState<string>("");
   const ws = useRef<WebSocket | null>(null);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const [isConnected, setIsConnected] = useState<boolean>(true);
 
   useEffect(() => {
+    setIsConnected(true);
     if (!isConnected) return;
-    ws.current = new WebSocket(WEBSOCKET_URL);
+    console.log("i18n.language: ", i18n.language);
+
+    ws.current = new WebSocket(WEBSOCKET_URL + i18n.language);
     ws.current.onmessage = (event: MessageEvent) => {
       const data: ChatMessage = JSON.parse(event.data);
       setMessages((prev) => [...prev, data]);
     };
     ws.current.onclose = () => {
-      setMessages((prev) => [
-        ...prev,
-        { content: "Disconnected", type: "system" },
-      ]);
+      if (messages.length > 0) {
+        setMessages((prev) => [
+          ...prev,
+          { content: t("chat.disconnected"), type: "system" },
+        ]);
+      }
     };
     return () => {
       ws.current?.close();
+      setIsConnected(false);
     };
-  }, [isConnected]);
+  }, [isConnected, i18n.language]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -75,15 +77,7 @@ const Chat = ({
   };
 
   return (
-    <div
-      className={`${css.chatContainer} ${
-        isChatVisible ? css.chatContainerVisible : ""
-      }`}
-    >
-      <button onClick={handleConnect} className={css.closeButton}>
-        <IoCloseSharp className={css.closeIcon} />
-      </button>
-
+    <div className={`${css.chatContainer} ${css.chatContainerVisible}`}>
       <div className={css.chatMessages} ref={messagesEndRef}>
         {messages.map((msg, i) => (
           <div
@@ -95,7 +89,7 @@ const Chat = ({
             )}
             key={i}
           >
-            <b>{msg.type === "assistant" ? `${msg.type}:` : ""}</b>{" "}
+            <b>{msg.type === "assistant" ? `${t("chat.assistant")}:` : ""}</b>
             <ReactMarkdown>{msg.content}</ReactMarkdown>
           </div>
         ))}
@@ -107,6 +101,7 @@ const Chat = ({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className={css.chatInput}
+          placeholder={t("chat.placeholder")}
         />
         <button type="submit" className={css.sendButton}>
           <IoIosSend className={css.sendIcon} />

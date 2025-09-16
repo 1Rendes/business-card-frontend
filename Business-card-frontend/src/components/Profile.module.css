@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 900px;
+  max-width: 900px;
+  width: 100%;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
@@ -11,12 +12,11 @@
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.59);
   transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
   overflow: hidden;
-  pointer-events: none;
-  display: flex;
   opacity: 1;
   pointer-events: auto;
   padding: 50px 100px;
-  /* background-color: rgb(242, 242, 255); */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .mainDescriptionBlock {
   display: flex;

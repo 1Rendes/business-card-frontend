@@ -1,0 +1,52 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 160px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #6d81c4;
+}
+
+.button.active {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.button.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+    min-width: 200px;
+  }
+}
