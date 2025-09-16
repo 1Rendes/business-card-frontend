@@ -3,8 +3,10 @@ import css from "./Profile.module.css";
 import AccordionListItem from "./AccordionListItem";
 import clsx from "clsx";
 import profile from "../images/profile.png";
+import { useTranslation } from "react-i18next";
 
 const Profile = (): JSX.Element => {
+  const { t } = useTranslation();
   const profileRef = useRef<HTMLDivElement>(null);
 
   const [accordionStates, setAccordionStates] = useState({
@@ -39,23 +41,17 @@ const Profile = (): JSX.Element => {
           <div className={css.mainDescriptionBlock}>
             <div className={css.mainDescriptionBlockTitle}>
               <h1>Volodymyr Solonin</h1>
-              <p>
-                is a full-stack web developer with hands-on experience in
-                scalable applications and working in collaborative team
-                environments. His work spans both frontend and backend, with a
-                particular interest in the integration of AI technologies into
-                web development.
-              </p>
+              <p>{t("aboutMe.description")}</p>
             </div>
             <img className={css.profilePhoto} src={profile} alt="profile" />
           </div>
-          <h3>Core competencies:</h3>
+          <h3>{t("aboutMe.coreCompetencies")}</h3>
           <table className={css.table}>
             <tbody>
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Main stack</b>
+                    <b>{t("aboutMe.mainStack")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -67,7 +63,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Frontend</b>
+                    <b>{t("aboutMe.frontend")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -77,7 +73,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Backend</b>
+                    <b>{t("aboutMe.backend")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -87,7 +83,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Architecture</b>
+                    <b>{t("aboutMe.architecture")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -97,7 +93,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>AI Frameworks</b>
+                    <b>{t("aboutMe.aiFrameworks")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -107,7 +103,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Caching and performance</b>
+                    <b>{t("aboutMe.cachingPerformance")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -117,7 +113,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Development practices</b>
+                    <b>{t("aboutMe.developmentPractices")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -129,7 +125,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Areas of interest</b>
+                    <b>{t("aboutMe.areasOfInterest")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -142,7 +138,7 @@ const Profile = (): JSX.Element => {
               <tr className={css.string}>
                 <td className={css.stringHeader}>
                   <p>
-                    <b>Education</b>
+                    <b>{t("aboutMe.education")}</b>
                   </p>
                 </td>
                 <td className={css.stringData}>
@@ -151,71 +147,71 @@ const Profile = (): JSX.Element => {
                     className={css.projectItem}
                     href="https://drive.google.com/file/d/11SHbgIBWBGn26p5FSf4-vylxo1p4rRR9/view?usp=drive_link00000000000/view?usp=sharing"
                   >
-                    GoIT online courses (2024.01 - 2024.12)
+                    {t("aboutMe.educationLink")}
                   </a>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <h3>Projects from education:</h3>
+          <h3>{t("aboutMe.projectsFromEducation")}</h3>
           <ul className={css.projectsList}>
             <AccordionListItem
               href="https://1rendes.github.io/goit-markup-hw-06/"
-              name="WebStudio"
+              name={t("aboutMe.projects.webStudio.name")}
               order="first"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Landing page for a web studio, adaptive typesetting, HTML, CSS"
+              shortDescription={t("aboutMe.projects.webStudio.description")}
             />
             <AccordionListItem
               href="https://1rendes.github.io/Project-SuperCode/"
-              name="Watchcharm"
+              name={t("aboutMe.projects.watchcharm.name")}
               order="second"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Landing page for a watch charm, adaptive typesetting, HTML, CSS, JavaScript"
+              shortDescription={t("aboutMe.projects.watchcharm.description")}
             />
             <AccordionListItem
               href="https://1rendes.github.io/Project-SuperScript/"
-              name="Portfolio"
+              name={t("aboutMe.projects.portfolio.name")}
               order="third"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Portfolio page, adaptive typesetting, HTML, CSS, JavaScript, SASS"
+              shortDescription={t("aboutMe.projects.portfolio.description")}
             />
             <AccordionListItem
               href="https://movie-observer.vercel.app/"
-              name="Movie-observer"
+              name={t("aboutMe.projects.movieObserver.name")}
               order="fourth"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Web application for searching movies, series, actors. Created on existing API"
+              shortDescription={t("aboutMe.projects.movieObserver.description")}
             />
             <AccordionListItem
               href="https://aqua-track-duna-front.vercel.app/"
-              name="AquaTrack"
+              name={t("aboutMe.projects.aquaTrack.name")}
               order="fifth"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Web application for tracking daily water intake. Full-stack project"
+              shortDescription={t("aboutMe.projects.aquaTrack.description")}
             />
             <AccordionListItem
               href="https://travel-trucks-test-task.vercel.app/"
-              name="Travel-trucks"
+              name={t("aboutMe.projects.travelTrucks.name")}
               order="sixth"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription="Web application for searching trucks for transport. Created on existing API"
+              shortDescription={t("aboutMe.projects.travelTrucks.description")}
             />
           </ul>
-          <h3>Contact information:</h3>
+          <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
             <a href="tel:+491717494053" className={css.address}>
-              <b>Mobil.:</b> +49 (0)171 749 4053
+              <b>{t("aboutMe.mobile")}</b> +49 (0)171 749 4053
             </a>
             <a href="mailto:mail@volo.rocks" className={css.address}>
-              <b>Email:</b> mail@volo.rocks
+              <b>{t("aboutMe.email")}</b> mail@volo.rocks
             </a>
           </div>
         </div>

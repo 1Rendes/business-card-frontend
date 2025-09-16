@@ -8,6 +8,50 @@
     "impressum": "Imprint",
     "datenschutz": "Privacy Policy"
   },
+  "aboutMe": {
+    "description": "is a full-stack web developer with hands-on experience in scalable applications and working in collaborative team environments. His work spans both frontend and backend, with a particular interest in the integration of AI technologies into web development.",
+    "coreCompetencies": "Core competencies:",
+    "mainStack": "Main stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "architecture": "Architecture",
+    "aiFrameworks": "AI Frameworks",
+    "cachingPerformance": "Caching and performance",
+    "developmentPractices": "Development practices",
+    "areasOfInterest": "Areas of interest",
+    "education": "Education",
+    "educationLink": "GoIT online courses (2024.01 - 2024.12)",
+    "projectsFromEducation": "Projects from education:",
+    "contactInformation": "Contact information:",
+    "mobile": "Mobile:",
+    "email": "Email:",
+    "projects": {
+      "webStudio": {
+        "name": "WebStudio",
+        "description": "Landing page for a web studio, adaptive typesetting, HTML, CSS"
+      },
+      "watchcharm": {
+        "name": "Watchcharm",
+        "description": "Landing page for a watch charm, adaptive typesetting, HTML, CSS, JavaScript"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "description": "Portfolio page, adaptive typesetting, HTML, CSS, JavaScript, SASS"
+      },
+      "movieObserver": {
+        "name": "Movie-observer",
+        "description": "Web application for searching movies, series, actors. Created on existing API"
+      },
+      "aquaTrack": {
+        "name": "AquaTrack",
+        "description": "Web application for tracking daily water intake. Full-stack project"
+      },
+      "travelTrucks": {
+        "name": "Travel-trucks",
+        "description": "Web application for searching trucks for transport. Created on existing API"
+      }
+    }
+  },
   "basicCard": {
     "profession": "Full Stack Developer",
     "address": {

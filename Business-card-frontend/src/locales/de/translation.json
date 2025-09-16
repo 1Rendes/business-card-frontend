@@ -8,6 +8,50 @@
     "impressum": "Impressum",
     "datenschutz": "Datenschutz"
   },
+  "aboutMe": {
+    "description": "ist ein Full-Stack Webentwickler mit praktischer Erfahrung in skalierbaren Anwendungen und der Arbeit in kollaborativen Teamumgebungen. Seine Arbeit umfasst sowohl Frontend als auch Backend, mit besonderem Interesse an der Integration von KI-Technologien in die Webentwicklung.",
+    "coreCompetencies": "Kernkompetenzen:",
+    "mainStack": "Haupt-Stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "architecture": "Architektur",
+    "aiFrameworks": "KI-Frameworks",
+    "cachingPerformance": "Caching und Performance",
+    "developmentPractices": "Entwicklungspraktiken",
+    "areasOfInterest": "Interessensgebiete",
+    "education": "Ausbildung",
+    "educationLink": "GoIT Online-Kurse (2024.01 - 2024.12)",
+    "projectsFromEducation": "Projekte aus der Ausbildung:",
+    "contactInformation": "Kontaktinformationen:",
+    "mobile": "Mobil.:",
+    "email": "Email:",
+    "projects": {
+      "webStudio": {
+        "name": "WebStudio",
+        "description": "Landingpage für ein Webstudio, responsives Layout, HTML, CSS"
+      },
+      "watchcharm": {
+        "name": "Watchcharm",
+        "description": "Landingpage für einen Uhranhänger, responsives Layout, HTML, CSS, JavaScript"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "description": "Portfolio-Seite, responsives Layout, HTML, CSS, JavaScript, SASS"
+      },
+      "movieObserver": {
+        "name": "Movie-observer",
+        "description": "Webanwendung zur Suche nach Filmen, Serien, Schauspielern. Erstellt auf bestehender API"
+      },
+      "aquaTrack": {
+        "name": "AquaTrack",
+        "description": "Webanwendung zur Verfolgung der täglichen Wasseraufnahme. Full-Stack-Projekt"
+      },
+      "travelTrucks": {
+        "name": "Travel-trucks",
+        "description": "Webanwendung zur Suche nach LKWs für Transport. Erstellt auf bestehender API"
+      }
+    }
+  },
   "basicCard": {
     "profession": "Full Stack Developer",
     "address": {

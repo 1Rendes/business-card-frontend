@@ -8,6 +8,50 @@
     "impressum": "Відомості про видавця",
     "datenschutz": "Політика конфіденційності"
   },
+  "aboutMe": {
+    "description": "це full-stack веб-розробник з практичним досвідом у масштабованих додатках та роботі в колаборативних командних середовищах. Його робота охоплює як frontend, так і backend, з особливим інтересом до інтеграції технологій ШІ у веб-розробку.",
+    "coreCompetencies": "Основні компетенції:",
+    "mainStack": "Основний стек",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "architecture": "Архітектура",
+    "aiFrameworks": "Фреймворки ШІ",
+    "cachingPerformance": "Кешування та продуктивність",
+    "developmentPractices": "Практики розробки",
+    "areasOfInterest": "Сфери інтересів",
+    "education": "Освіта",
+    "educationLink": "GoIT онлайн-курси (2024.01 - 2024.12)",
+    "projectsFromEducation": "Проекти з навчання:",
+    "contactInformation": "Контактна інформація:",
+    "mobile": "Моб.:",
+    "email": "Email:",
+    "projects": {
+      "webStudio": {
+        "name": "WebStudio",
+        "description": "Лендінг для веб-студії, адаптивна верстка, HTML, CSS"
+      },
+      "watchcharm": {
+        "name": "Watchcharm",
+        "description": "Лендінг для брелока для годинника, адаптивна верстка, HTML, CSS, JavaScript"
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "description": "Сторінка портфоліо, адаптивна верстка, HTML, CSS, JavaScript, SASS"
+      },
+      "movieObserver": {
+        "name": "Movie-observer",
+        "description": "Веб-додаток для пошуку фільмів, серіалів, акторів. Створено на існуючому API"
+      },
+      "aquaTrack": {
+        "name": "AquaTrack",
+        "description": "Веб-додаток для відстеження щоденного споживання води. Full-stack проект"
+      },
+      "travelTrucks": {
+        "name": "Travel-trucks",
+        "description": "Веб-додаток для пошуку вантажівок для транспорту. Створено на існуючому API"
+      }
+    }
+  },
   "basicCard": {
     "profession": "Full Stack Developer",
     "address": {

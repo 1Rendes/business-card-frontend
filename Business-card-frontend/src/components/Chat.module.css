@@ -39,10 +39,8 @@
   border-radius: 18px;
   overflow: hidden;
   height: 570px;
-  width: 540px;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 }
 
 .chatMessages {
