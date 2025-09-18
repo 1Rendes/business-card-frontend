@@ -30,6 +30,7 @@
 
 .button.active {
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background-color: #6d81c4;
 }
 
 .button.active:hover {

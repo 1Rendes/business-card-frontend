@@ -5,7 +5,11 @@
   top: 0px;
   margin: 0 auto;
 }
-
+@media (max-width: 1200px) {
+  .aiChatPage {
+    width: 360px;
+  }
+}
 .chatScaleContainer {
   position: absolute;
   top: 320px;

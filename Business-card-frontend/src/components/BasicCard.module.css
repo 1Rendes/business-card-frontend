@@ -9,14 +9,16 @@
   position: relative;
   box-sizing: border-box;
 }
-
+.whiteback {
+  height: auto;
+}
 .basicCard.noTopMargin {
   margin-top: 0;
 }
 @media (max-width: 1200px) {
   .basicCard {
-    max-width: 350px;
     margin: 80px auto 50px auto;
+    width: 350px;
   }
 }
 .whiteback {
@@ -24,6 +26,7 @@
   padding: 20px 20px 20px 20px;
   background-color: rgba(211, 211, 253, 0.51);
   display: flex;
+  height: 250px;
   align-items: center;
   flex-direction: row;
 }
@@ -39,6 +42,7 @@
   .whiteback {
     padding: 10px 10px 10px 10px;
     flex-direction: column;
+    height: auto;
   }
 
   .imageSection {
@@ -104,7 +108,7 @@
 .qrCode {
   border-radius: 15px;
   width: 100%;
-  max-width: 200px;
+  max-width: 173px;
   height: auto;
   object-fit: contain;
 }

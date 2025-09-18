@@ -78,19 +78,16 @@
   float: right;
 }
 .nameBlock {
-  /* width: 600px; */
   display: flex;
   flex-direction: column;
   gap: 30px;
   text-align: justify;
 }
-/* .tableBody {
-  display: flex;
-  flex-direction: column;
-} */
+
 .stringHeader {
   font-weight: bold;
   width: 200px;
+  text-align: left;
 }
 @media (max-width: 1200px) {
   .stringHeader {
