@@ -17,6 +17,70 @@
     "visitProject": "Projektseite besuchen",
     "moreInfo": "Mehr erfahren..."
   },
+  "projectCard": {
+    "role": "Rolle:",
+    "goal": "Ziel:",
+    "experience": "Erfahrung:",
+    "technologies": "Technologien:",
+    "linkToProject": "Link zum Projekt:",
+    "projects": {
+      "webStudio": {
+        "goal": "Die Methoden des HTML-Satzs in der Praxis zu beherrschen und CSS zu lernen, erste Bekanntschaft mit dem responsiven Layout",
+        "role": "Entwickler",
+        "experience": [
+          "Gelernt, HTML-Tags für ihren Zweck zu verwenden",
+          "Verstehen der CSS-Prinzipien",
+          "Verstehen, wie DOM funktioniert, dekorative Elemente und Formulare",
+          "Entdeckt, wie responsives Layout funktioniert"
+        ]
+      },
+      "watchcharm": {
+        "goal": "Lernen, in einem Team mit Fremden an einem gemeinsamen Projekt innerhalb eines begrenzten Zeitrahmens zu arbeiten. Teilnahme als Teamleiter. HTML, CSS und JavaScript in die Praxis umsetzen.",
+        "role": "Entwickler, Teamleiter",
+        "experience": [
+          "Gelernt, wie man Aufgaben richtig unter Teammitgliedern über die Zeit verteilt",
+          "HTML- und CSS-Kenntnisse durch Abschluss einer Aufgabe in begrenzter Zeit gefestigt",
+          "Das Projekt dem Kunden präsentiert"
+        ]
+      },
+      "portfolio": {
+        "goal": "Verbesserung der Fähigkeiten in der Arbeit in einem Entwicklungsteam, Festigung der Java Script-Kenntnisse, Abschluss des Projekts innerhalb eines begrenzten Zeitrahmens",
+        "role": "Entwickler, Teamleiter",
+        "experience": [
+          "Gelernt, mit SASS zu arbeiten, verschiedene Java Script-Bibliotheken zu verwenden und zu konfigurieren",
+          "Interaktion mit Kollegen zur Problemlösung, Verhandlungen und Kompromisse mit einer Schattenlösung",
+          "Verbesserte Fähigkeiten in der Arbeit mit dem Git-Workflow"
+        ]
+      },
+      "movieObserver": {
+        "goal": "React.js-Kenntnisse in der Praxis zu testen und Fähigkeiten in der Entwicklung von Frontend-Anwendungen zu verbessern",
+        "role": "Entwickler",
+        "experience": [
+          "Verbesserte praktische Fähigkeiten in React.js",
+          "Arbeit mit verschiedenen Frontend-Bibliotheken, Übungstechniken für Paginierung, Video-Player und Backend-Interaktionen",
+          "Verschiedene Techniken wurden verwendet, um das beabsichtigte Design umzusetzen, was beträchtliche Erfahrung bot"
+        ]
+      },
+      "aquaTrack": {
+        "goal": "Verbesserung der Fähigkeiten in Node.js, React.js und Teamarbeit in einem begrenzten Zeitrahmen",
+        "role": "Entwickler, Teamleiter",
+        "experience": [
+          "Verbesserte Fähigkeiten im Design einer Full-Stack-Anwendung",
+          "Optimierte Arbeit mit Benutzerdaten",
+          "Verbesserte Teamarbeitsfähigkeiten"
+        ]
+      },
+      "travelTrucks": {
+        "goal": "React.js-Kenntnisse in der Praxis zu testen und Fähigkeiten in der Entwicklung von Frontend-Anwendungen zu verbessern",
+        "role": "Entwickler",
+        "experience": [
+          "Verbesserte praktische Fähigkeiten in React.js",
+          "Arbeit mit verschiedenen Frontend-Bibliotheken, Übungstechniken für Paginierung, Video-Player und Backend-Interaktionen",
+          "Verschiedene Techniken wurden verwendet, um das beabsichtigte Design umzusetzen, was beträchtliche Erfahrung bot"
+        ]
+      }
+    }
+  },
   "aboutMe": {
     "description": "Ich bin ein Full-Stack Webentwickler mit praktischer Erfahrung in skalierbaren Anwendungen und der Arbeit in kollaborativen Teamumgebungen. Meine Arbeit umfasst sowohl Frontend als auch Backend, mit besonderem Interesse an der Integration von KI-Technologien in die Webentwicklung.",
     "coreCompetencies": "Kernkompetenzen:",

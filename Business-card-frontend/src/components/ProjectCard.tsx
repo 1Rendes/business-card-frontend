@@ -7,6 +7,7 @@ import Portfolio from "../images/portfolioPrev.webp";
 import MovieObserver from "../images/movieObserverPrev.webp";
 import AquaTrack from "../images/aquaTrackPrev.webp";
 import TravelTrucks from "../images/travelTrucksPrev.webp";
+import { useTranslation } from "react-i18next";
 
 const ProjectCard = ({
   isOpen,
@@ -17,70 +18,59 @@ const ProjectCard = ({
   order: string;
   handleClose: () => void;
 }) => {
+  const { t } = useTranslation();
+  
+  const getProjectData = () => {
+    const projectKey = order as keyof typeof projectKeys;
+    const projectName = projectKeys[projectKey];
+    const goal = t(`projectCard.projects.${projectName}.goal`);
+    const role = t(`projectCard.projects.${projectName}.role`);
+    const experience = t(`projectCard.projects.${projectName}.experience`, { returnObjects: true });
+    return {
+      name: projectName,
+      goal: goal,
+      role: role,
+      experience: Array.isArray(experience) ? experience : [],
+    };
+  };
+
+  const projectKeys = {
+    first: "webStudio",
+    second: "watchcharm", 
+    third: "portfolio",
+    fourth: "movieObserver",
+    fifth: "aquaTrack",
+    sixth: "travelTrucks",
+  } as const;
+
   const cardData = {
     first: {
       name: "WebStudio",
       link: "https://1rendes.github.io/goit-markup-hw-06/",
-      goal: "To master the methods of HTML typesetting in practice and to learn how to use CSS, the first acquaintance with adaptive typesetting",
-      role: "Developer",
-      experienceList: [
-        "Learned to use HTML tags for their intended purpose",
-        "Understand the principles of CSS",
-        "Understand how DOM works, decorative elements, and forms",
-        "Discovered how responsive layout works",
-      ],
       imageLink: WebStudio,
       technologies: "HTML, CSS",
     },
     second: {
       name: "Watchcharm",
       link: "https://1rendes.github.io/Project-SuperCode/",
-      role: "Developer, team leader",
-      goal: "Learn to work in a team with strangers on a shared project within a limited timeframe. Participate as a team leader. Put HTML, CSS, and JavaScript into practice.",
-      experienceList: [
-        "Learned how to properly distribute tasks among team members over time",
-        "Consolidated HTML and CSS knowledge by completing a task in a limited time",
-        "Presented the project to the client",
-      ],
       imageLink: Watchcharm,
       technologies: "HTML, CSS, JavaScript",
     },
     third: {
       name: "Portfolio",
       link: "https://1rendes.github.io/Project-SuperScript/",
-      role: "Developer, team leader",
-      goal: "Improve skills in working in a development team, consolidate Java Script knowledge, complete the project within a limited timeframe",
-      experienceList: [
-        "Learned to work with SASS, use and configure various Java script libraries",
-        "Interact with colleagues to solve problems, negotiate, and reach compromises using a shadow solution",
-        "Improved skills in working with the Git workflow",
-      ],
       imageLink: Portfolio,
       technologies: "HTML, CSS, JavaScript",
     },
     fourth: {
       name: "Movie-observer",
       link: "https://movie-observer.vercel.app/",
-      role: "Developer",
-      goal: "To test knowledge of React.js in practice and to improve skills in developing front-end applications",
-      experienceList: [
-        "Improved practical skills in React.js",
-        "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
-        "Various techniques were used to implement the intended design, which provided considerable experience",
-      ],
       imageLink: MovieObserver,
       technologies: "React.js, React Router, React Hooks, React Context",
     },
     fifth: {
       name: "AquaTrack",
       link: "https://aqua-track-duna-front.vercel.app/",
-      role: "Developer, team leader",
-      goal: "Improve skills in Node.js, React.js and teamwork in a limited timeframe",
-      experienceList: [
-        "Improved skills in designing a Full-Stack application",
-        "Optimized work with user data",
-        "Improved teamwork skills",
-      ],
       imageLink: AquaTrack,
       technologies:
         "React.js, Node.js, Express, MongoDB, Mongoose, JSON Web Token, React Hook Form, React Router, React Hooks, React Context",
@@ -88,13 +78,6 @@ const ProjectCard = ({
     sixth: {
       name: "Travel-trucks",
       link: "https://travel-trucks-test-task.vercel.app/",
-      role: "Developer",
-      goal: "Test knowledge of React.js in practice and to improve skills in developing front-end applications",
-      experienceList: [
-        "Improved practical skills in React.js",
-        "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
-        "Various techniques were used to implement the intended design, which provided considerable experience",
-      ],
       imageLink: TravelTrucks,
       technologies: "React.js, React Router, React Hooks, React Context",
     },
@@ -127,18 +110,18 @@ const ProjectCard = ({
               {cardData[order as keyof typeof cardData].name}
             </h2>
             <p>
-              <b>Role: </b>
-              {cardData[order as keyof typeof cardData].role}
+              <b>{t("projectCard.role")} </b>
+              {getProjectData().role}
             </p>
             <p>
-              <b>Goal: </b>
-              {cardData[order as keyof typeof cardData].goal}
+              <b>{t("projectCard.goal")} </b>
+              {getProjectData().goal}
             </p>
             <p>
-              <b>Experience:</b>
+              <b>{t("projectCard.experience")}</b>
             </p>
             <ul className={css.experienceList}>
-              {cardData[order as keyof typeof cardData].experienceList.map(
+              {getProjectData().experience.map(
                 (item, index) => (
                   <li className={css.experienceItem} key={index}>
                     {item}
@@ -147,13 +130,13 @@ const ProjectCard = ({
               )}
             </ul>
             <p>
-              <b>Technologies:</b>
+              <b>{t("projectCard.technologies")}</b>
             </p>
             <p>{cardData[order as keyof typeof cardData].technologies}</p>
           </div>
           <div className={css.projectCardPreviewContainer}>
             <p>
-              <b>Link to the project:</b>
+              <b>{t("projectCard.linkToProject")}</b>
             </p>
             <a
               className={css.projectCardLink}
