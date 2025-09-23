@@ -15,7 +15,7 @@
 .basicCard.noTopMargin {
   margin-top: 0;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   .basicCard {
     margin: 80px auto 50px auto;
     width: 350px;
@@ -38,10 +38,9 @@
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   .whiteback {
-    padding: 10px 10px 10px 10px;
-    flex-direction: column;
+    padding: 20px 10px 20px 10px;
     height: auto;
   }
 
@@ -61,10 +60,6 @@
   .qrSection {
     flex: none;
     justify-content: center;
-  }
-
-  .qrCode {
-    max-width: 150px;
   }
 
   .qrContentSection {
@@ -112,7 +107,11 @@
   height: auto;
   object-fit: contain;
 }
-
+@media (max-width: 767px) {
+  .qrCode {
+    max-width: 137px;
+  }
+}
 .qrContentSection {
   flex: 0 0 20%;
   display: flex;
@@ -125,7 +124,7 @@
   font-size: 25px;
 }
 .profession {
-  font-size: 12px;
+  font-size: 14px;
 }
 .addressBlock {
   margin-top: 40px;
@@ -133,7 +132,7 @@
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   .addressBlock {
     margin-top: 20px;
   }
@@ -156,10 +155,14 @@
   cursor: pointer;
   transition: scale 100ms ease-in-out;
 }
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   .dots {
     top: 155px;
     left: 25px;
+  }
+  .name {
+    font-size: 20px;
+    line-height: 1.2;
   }
 }
 

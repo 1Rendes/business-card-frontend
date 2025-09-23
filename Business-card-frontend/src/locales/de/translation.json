@@ -63,7 +63,8 @@
     }
   },
   "secondCard": {
-    "scanContact": "Scanne meinen Kontakt"
+    "scanContact": "Scanne meinen Kontakt",
+    "download": "oder download meine VCF-Datei"
   },
   "chat": {
     "disconnected": "Disconnected",

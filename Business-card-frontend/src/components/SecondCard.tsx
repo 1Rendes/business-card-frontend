@@ -15,6 +15,11 @@ const SecondCard = (): JSX.Element => {
         <div className={css.qrSection}>
           <img className={css.qrCode} src={qrCode} alt="QR Code" />
         </div>
+        <div className={css.qrContentSection}>
+          <a href={vcfFile} download>
+            <p className={css.name}>{t("secondCard.download")}</p>
+          </a>
+        </div>
       </div>
     </div>
   );
