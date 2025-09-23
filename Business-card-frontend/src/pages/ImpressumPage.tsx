@@ -30,14 +30,6 @@ const ImpressumPage = (): JSX.Element => {
           <strong>{t("impressum.email")}</strong>{" "}
           <a href="mailto:mail@volo.rocks">mail@volo.rocks</a>
           <br />
-          <strong>{t("impressum.github")}</strong>{" "}
-          <a
-            href="https://github.com/1Rendes"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/1Rendes
-          </a>
         </p>
       </section>
 

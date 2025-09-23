@@ -1,37 +1,31 @@
 import { JSX } from "react";
-import { NavigationPage } from "./Navigation";
+import { Link, useLocation } from "react-router-dom";
 import css from "./Footer.module.css";
 import { useTranslation } from "react-i18next";
+import { ROUTES } from "../types/routes";
 
-const Footer = ({
-  onPageChange,
-  activePage,
-}: {
-  onPageChange: (page: NavigationPage) => void;
-  activePage: NavigationPage;
-}): JSX.Element => {
+const Footer = (): JSX.Element => {
   const { t } = useTranslation();
+  const location = useLocation();
 
   return (
     <div className={css.footer}>
-      <button
+      <Link
+        to={ROUTES.IMPRESSUM}
         className={`${css.button} ${
-          activePage === "impressum" ? css.active : ""
+          location.pathname === ROUTES.IMPRESSUM ? css.active : ""
         }`}
-        onClick={() => onPageChange("impressum")}
-        type="button"
       >
         {t("footer.impressum")}
-      </button>
-      <button
+      </Link>
+      <Link
+        to={ROUTES.DATENSCHUTZ}
         className={`${css.button} ${
-          activePage === "datenschutz" ? css.active : ""
+          location.pathname === ROUTES.DATENSCHUTZ ? css.active : ""
         }`}
-        onClick={() => onPageChange("datenschutz")}
-        type="button"
       >
         {t("footer.datenschutz")}
-      </button>
+      </Link>
     </div>
   );
 };

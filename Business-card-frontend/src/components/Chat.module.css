@@ -39,12 +39,15 @@
   border-radius: 18px;
   overflow: hidden;
   height: 570px;
-  width: 540px;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  width: 80%;
 }
-
+@media (max-width: 767px) {
+  .chatContainer {
+    width: 100%;
+  }
+}
 .chatMessages {
   flex: 1 1 auto;
   overflow-y: auto;

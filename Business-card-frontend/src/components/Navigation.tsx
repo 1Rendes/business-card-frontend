@@ -1,22 +1,12 @@
 import styles from "./Navigation.module.css";
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
-
-type NavigationPage =
-  | "visitenkarte"
-  | "lebenslauf"
-  | "ai-chat"
-  | "impressum"
-  | "datenschutz";
+import { Link, useLocation } from "react-router-dom";
+import { ROUTES } from "../types/routes";
 
 type NavigationItem = {
-  id: NavigationPage;
+  path: string;
   label: string;
-};
-
-type NavigationProps = {
-  activePage: NavigationPage;
-  onPageChange: (page: NavigationPage) => void;
 };
 
 type Language = "de" | "en" | "ua";
@@ -27,24 +17,18 @@ const languages: { code: Language; label: string }[] = [
   { code: "ua", label: "UA" },
 ];
 
-export const Navigation = ({
-  activePage,
-  onPageChange,
-}: NavigationProps): JSX.Element => {
+export const Navigation = (): JSX.Element => {
   const { t, i18n } = useTranslation();
-
-  const handleNavClick = (pageId: NavigationPage): void => {
-    onPageChange(pageId);
-  };
+  const location = useLocation();
 
   const handleLanguageChange = (languageCode: Language): void => {
     i18n.changeLanguage(languageCode);
   };
 
   const navigationItems: NavigationItem[] = [
-    { id: "visitenkarte", label: t("navigation.visitenkarte") },
-    { id: "lebenslauf", label: t("navigation.lebenslauf") },
-    { id: "ai-chat", label: t("navigation.aiChat") },
+    { path: ROUTES.VISITENKARTE, label: t("navigation.visitenkarte") },
+    { path: ROUTES.UEBER_MICH, label: t("navigation.ueberMich") },
+    { path: ROUTES.AI_CHAT, label: t("navigation.aiChat") },
   ];
 
   return (
@@ -52,16 +36,15 @@ export const Navigation = ({
       <div className={styles.navContainer}>
         <div className={styles.navButtons}>
           {navigationItems.map((item) => (
-            <button
-              key={item.id}
+            <Link
+              key={item.path}
+              to={item.path}
               className={`${styles.navButton} ${
-                activePage === item.id ? styles.active : ""
+                location.pathname === item.path ? styles.active : ""
               }`}
-              onClick={() => handleNavClick(item.id)}
-              type="button"
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
         <div className={styles.languageButtons}>
@@ -83,4 +66,3 @@ export const Navigation = ({
   );
 };
 
-export type { NavigationPage };

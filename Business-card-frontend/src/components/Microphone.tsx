@@ -26,9 +26,7 @@ const Microphone = ({ isChatChoosen }: { isChatChoosen: boolean }) => {
   const [connectionDetails, setConnectionDetails] = useState<
     ConnectionDetails | undefined
   >(undefined);
-  console.log("connectionDetails: ", connectionDetails);
   const onConnectButtonClicked = useCallback(async () => {
-    console.log("onConnectButtonClicked");
     if (isMicroClicked) {
       setIsMicroClicked(false);
       setConnectionDetails(undefined);
