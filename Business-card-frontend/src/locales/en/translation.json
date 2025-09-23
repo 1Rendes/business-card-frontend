@@ -17,6 +17,70 @@
     "visitProject": "Visit project page",
     "moreInfo": "More info..."
   },
+  "projectCard": {
+    "role": "Role:",
+    "goal": "Goal:",
+    "experience": "Experience:",
+    "technologies": "Technologies:",
+    "linkToProject": "Link to the project:",
+    "projects": {
+      "webStudio": {
+        "goal": "To master the methods of HTML typesetting in practice and to learn how to use CSS, the first acquaintance with adaptive typesetting",
+        "role": "Developer",
+        "experience": [
+          "Learned to use HTML tags for their intended purpose",
+          "Understand the principles of CSS",
+          "Understand how DOM works, decorative elements, and forms",
+          "Discovered how responsive layout works"
+        ]
+      },
+      "watchcharm": {
+        "goal": "Learn to work in a team with strangers on a shared project within a limited timeframe. Participate as a team leader. Put HTML, CSS, and JavaScript into practice.",
+        "role": "Developer, team leader",
+        "experience": [
+          "Learned how to properly distribute tasks among team members over time",
+          "Consolidated HTML and CSS knowledge by completing a task in a limited time",
+          "Presented the project to the client"
+        ]
+      },
+      "portfolio": {
+        "goal": "Improve skills in working in a development team, consolidate Java Script knowledge, complete the project within a limited timeframe",
+        "role": "Developer, team leader",
+        "experience": [
+          "Learned to work with SASS, use and configure various Java script libraries",
+          "Interact with colleagues to solve problems, negotiate, and reach compromises using a shadow solution",
+          "Improved skills in working with the Git workflow"
+        ]
+      },
+      "movieObserver": {
+        "goal": "To test knowledge of React.js in practice and to improve skills in developing front-end applications",
+        "role": "Developer",
+        "experience": [
+          "Improved practical skills in React.js",
+          "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
+          "Various techniques were used to implement the intended design, which provided considerable experience"
+        ]
+      },
+      "aquaTrack": {
+        "goal": "Improve skills in Node.js, React.js and teamwork in a limited timeframe",
+        "role": "Developer, team leader",
+        "experience": [
+          "Improved skills in designing a Full-Stack application",
+          "Optimized work with user data",
+          "Improved teamwork skills"
+        ]
+      },
+      "travelTrucks": {
+        "goal": "Test knowledge of React.js in practice and to improve skills in developing front-end applications",
+        "role": "Developer",
+        "experience": [
+          "Improved practical skills in React.js",
+          "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
+          "Various techniques were used to implement the intended design, which provided considerable experience"
+        ]
+      }
+    }
+  },
   "aboutMe": {
     "description": "I am a Full-Stack web developer with hands-on experience in scalable applications and working in collaborative team environments. My work covers both frontend and backend, with a particular interest in integrating AI technologies into web development.",
     "coreCompetencies": "Core competencies:",
