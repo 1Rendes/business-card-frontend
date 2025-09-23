@@ -41,8 +41,13 @@
   height: 570px;
   display: flex;
   flex-direction: column;
+  width: 80%;
 }
-
+@media (max-width: 767px) {
+  .chatContainer {
+    width: 100%;
+  }
+}
 .chatMessages {
   flex: 1 1 auto;
   overflow-y: auto;

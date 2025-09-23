@@ -14,10 +14,11 @@
 }
 .basicCard.noTopMargin {
   margin-top: 0;
+  margin-bottom: 15px;
 }
 @media (max-width: 767px) {
   .basicCard {
-    margin: 80px auto 50px auto;
+    margin: 15px auto 50px auto;
     width: 350px;
   }
 }
@@ -32,7 +33,7 @@
 }
 .secondCardWhiteback {
   border-radius: 15px;
-  padding: 20px 20px 20px 20px;
+  padding: 13px 20px 13px 20px;
   background-color: rgba(211, 211, 253, 0.51);
   display: flex;
   flex-direction: column;
@@ -43,7 +44,9 @@
     padding: 20px 10px 20px 10px;
     height: auto;
   }
-
+.secondCardWhiteback{
+  padding: 10px 20px 10px 20px;
+}
   .imageSection {
     flex: none;
   }
@@ -122,6 +125,7 @@
 }
 .name {
   font-size: 25px;
+  line-height: 1.2;
 }
 .profession {
   font-size: 14px;
@@ -173,4 +177,16 @@
   position: absolute;
   top: 180px;
   right: 40px;
+}
+.downloadButton {
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .downloadButton {
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }

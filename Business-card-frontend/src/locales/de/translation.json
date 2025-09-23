@@ -1,12 +1,21 @@
 {
   "navigation": {
     "visitenkarte": "Visitenkarte",
-    "lebenslauf": "Über mich...",
+    "ueberMich": "Über mich...",
     "aiChat": "Rede mit meiner AI"
   },
   "footer": {
     "impressum": "Impressum",
     "datenschutz": "Datenschutz"
+  },
+  "404": {
+    "notFound": "Seite nicht gefunden",
+    "description": "Die angeforderte Seite konnte nicht gefunden werden.",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "accordion": {
+    "visitProject": "Projektseite besuchen",
+    "moreInfo": "Mehr erfahren..."
   },
   "aboutMe": {
     "description": "Ich bin ein Full-Stack Webentwickler mit praktischer Erfahrung in skalierbaren Anwendungen und der Arbeit in kollaborativen Teamumgebungen. Meine Arbeit umfasst sowohl Frontend als auch Backend, mit besonderem Interesse an der Integration von KI-Technologien in die Webentwicklung.",

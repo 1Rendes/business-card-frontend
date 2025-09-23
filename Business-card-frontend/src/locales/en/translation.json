@@ -1,12 +1,21 @@
 {
   "navigation": {
     "visitenkarte": "Business Card",
-    "lebenslauf": "About me...",
+    "ueberMich": "About me...",
     "aiChat": "Talk to my AI"
   },
   "footer": {
     "impressum": "Imprint",
     "datenschutz": "Privacy Policy"
+  },
+  "404": {
+    "notFound": "Page not found",
+    "description": "The requested page could not be found.",
+    "backToHome": "Back to home"
+  },
+  "accordion": {
+    "visitProject": "Visit project page",
+    "moreInfo": "More info..."
   },
   "aboutMe": {
     "description": "I am a Full-Stack web developer with hands-on experience in scalable applications and working in collaborative team environments. My work covers both frontend and backend, with a particular interest in integrating AI technologies into web development.",

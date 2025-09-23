@@ -11,7 +11,7 @@
   padding: 0.75rem 1.5rem;
   background-color: transparent;
   border-radius: 50px;
-  color: #ffffff;
+  color:#212121;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -31,6 +31,7 @@
 .button.active {
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
   background-color: #6d81c4;
+  color: #d7d7d7;
 }
 
 .button.active:hover {

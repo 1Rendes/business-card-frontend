@@ -22,14 +22,6 @@
 .projectItem:hover {
   background-color: rgba(150, 186, 254, 0.51);
 }
-.opened {
-  height: 115px;
-}
-@media (max-width: 1200px) {
-  .opened {
-    height: 135px;
-  }
-}
 .openedInfo {
   width: 100%;
   display: flex;
@@ -43,6 +35,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.shortDescription{
+  text-align: left;
+}
 .linkContainer {
   display: flex;
   gap: 10px;
@@ -55,6 +50,7 @@
   cursor: pointer;
 }
 .link {
+  text-align: center;
   background-color: rgba(150, 186, 254, 0.51);
   border: none;
   border-radius: 10px;

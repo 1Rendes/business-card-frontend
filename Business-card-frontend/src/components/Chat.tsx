@@ -27,8 +27,6 @@ const Chat = (): JSX.Element => {
   useEffect(() => {
     setIsConnected(true);
     if (!isConnected) return;
-    console.log("i18n.language: ", i18n.language);
-
     ws.current = new WebSocket(WEBSOCKET_URL + i18n.language);
     ws.current.onmessage = (event: MessageEvent) => {
       const data: ChatMessage = JSON.parse(event.data);
@@ -45,6 +43,7 @@ const Chat = (): JSX.Element => {
     return () => {
       ws.current?.close();
       setIsConnected(false);
+      setMessages([]);  
     };
   }, [isConnected, i18n.language]);
 

@@ -1,9 +1,10 @@
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import css from "./AccordionListItem.module.css";
 import { AccordionStates } from "../types/accordion-states";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState, useRef } from "react";
 import clsx from "clsx";
 import ProjectCard from "./ProjectCard";
+import { useTranslation } from "react-i18next";
 
 const AccordionListItem = ({
   href,
@@ -20,7 +21,17 @@ const AccordionListItem = ({
   setAccordionStates: Dispatch<SetStateAction<AccordionStates>>;
   shortDescription: string;
 }) => {
+  const { t } = useTranslation();
   const [modalOpen, setModalOpen] = useState(false);
+  const [itemHeight, setItemHeight] = useState<number>(43);
+  const contentRef = useRef<HTMLLIElement>(null);
+
+  const calculateHeight = (): void => {
+    if (contentRef.current) {
+      const height = contentRef.current.scrollHeight;
+      setItemHeight(height);
+    }
+  };
 
   useEffect(() => {
     if (modalOpen) {
@@ -33,12 +44,23 @@ const AccordionListItem = ({
     };
   }, [modalOpen]);
 
+  useEffect(() => {
+    calculateHeight();
+  }, [shortDescription, t]);
+
+  useEffect(() => {
+    if (accordionStates[order] === "opened") {
+      calculateHeight();
+    } else {
+      setItemHeight(43);
+    }
+  }, [accordionStates, order]);
+
   return (
     <li
-      className={clsx(
-        css.projectItem,
-        accordionStates[order] === "opened" && css.opened
-      )}
+      ref={contentRef}
+      className={css.projectItem}
+      style={{ height: `${itemHeight}px` }}
       onClick={() =>
         setAccordionStates((prev) => ({
           ...prev,
@@ -59,7 +81,7 @@ const AccordionListItem = ({
       </div>
       {accordionStates[order] === "opened" && (
         <div className={css.openedInfo}>
-          <p>{shortDescription}</p>
+          <p className={css.shortDescription}>{shortDescription}</p>
           <div className={css.linkContainer}>
             <a
               target="blank"
@@ -69,7 +91,7 @@ const AccordionListItem = ({
                 event.stopPropagation();
               }}
             >
-              Visit project page
+              {t("accordion.visitProject")}
             </a>
             <a
               className={css.link}
@@ -78,7 +100,7 @@ const AccordionListItem = ({
                 setModalOpen(true);
               }}
             >
-              More info...
+              {t("accordion.moreInfo")}
             </a>
           </div>
         </div>
