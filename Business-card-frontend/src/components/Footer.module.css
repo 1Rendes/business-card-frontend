@@ -17,7 +17,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
-  min-width: 160px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -47,8 +46,6 @@
   }
 
   .button {
-    width: 100%;
-    max-width: 250px;
-    min-width: 200px;
+    width: auto;
   }
 }

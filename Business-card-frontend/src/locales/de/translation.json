@@ -137,7 +137,15 @@
   },
   "secondCard": {
     "scanContact": "Scanne meinen Kontakt",
-    "download": "oder download meine VCF-Datei"
+    "download": "Download Kontakt"
+  },
+  "captcha": {
+    "verifyHuman": "Bitte bestätigen Sie, dass Sie ein Mensch sind",
+    "verified": "✓ Erfolgreich bestätigt",
+    "downloadNow": "VCF-Datei herunterladen",
+    "error": "Bestätigung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "loading": "Überprüfung...",
+    "verifyButton": "Bestätigen"
   },
   "chat": {
     "disconnected": "Disconnected",
