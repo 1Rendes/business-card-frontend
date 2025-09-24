@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { routeConfig } from "./config/routes";
 import { NotFoundPage } from "./pages/404";
 
+
 const App = (): JSX.Element => {
   return (
     <BrowserRouter>

@@ -11,6 +11,7 @@
   "404": {
     "notFound": "Page not found",
     "description": "The requested page could not be found.",
+    "redirectMessage": "Automatic redirect to home page in {{seconds}} seconds...",
     "backToHome": "Back to home"
   },
   "accordion": {

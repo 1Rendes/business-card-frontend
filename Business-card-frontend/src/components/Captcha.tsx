@@ -6,6 +6,7 @@ import ReactModal from "react-modal";
 import recaptchaIcon from "../images/google_recaptcha-icon.svg";
 
 interface CaptchaProps {
+  isOpen: boolean;
   onVerify: (token: string | null) => void;
   onError: () => void;
   onClose: () => void;
@@ -22,12 +23,10 @@ declare global {
   }
 }
 
-const Captcha = ({ onVerify, onError, onClose }: CaptchaProps): JSX.Element => {
+const Captcha = ({ isOpen, onVerify, onError, onClose }: CaptchaProps): JSX.Element => {
   const { t } = useTranslation();
   const siteKey: string = "6LelNdMrAAAAAJ3UkBzSZoLv15UFgYja9XKjjP3i";
-  
-  ReactModal.setAppElement("#root");
-
+ 
   const handleClose = (): void => {
     onClose();
   };
@@ -61,9 +60,8 @@ const Captcha = ({ onVerify, onError, onClose }: CaptchaProps): JSX.Element => {
     <ReactModal
       overlayClassName={css.backdrop}
       className={css.modal}
-      isOpen={true}
+      isOpen={isOpen}
       onRequestClose={handleClose}
-      closeTimeoutMS={300}
       ariaHideApp={false}
     >
         <p className={css.captchaText}>{t("captcha.verifyHuman")}</p>

@@ -21,7 +21,6 @@ const SecondCard = (): JSX.Element => {
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
   const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
   const [captchaError, setCaptchaError] = useState<boolean>(false);
-
   const handleDownloadClick = (): void => {
     if (!showCaptcha) {
       setShowCaptcha(true);
@@ -66,6 +65,7 @@ const SecondCard = (): JSX.Element => {
           {showCaptcha && !isCaptchaVerified && (
             <>
               <Captcha
+                isOpen={showCaptcha && !isCaptchaVerified}
                 onVerify={handleCaptchaVerify}
                 onError={handleCaptchaError}
                 onClose={handleCaptchaClose}

@@ -8,6 +8,7 @@ import MovieObserver from "../images/movieObserverPrev.webp";
 import AquaTrack from "../images/aquaTrackPrev.webp";
 import TravelTrucks from "../images/travelTrucksPrev.webp";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const ProjectCard = ({
   isOpen,
@@ -19,6 +20,22 @@ const ProjectCard = ({
   handleClose: () => void;
 }) => {
   const { t } = useTranslation();
+
+  useEffect((): (() => void) => {
+    if (isOpen) {
+      const scrollY: number = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      return (): void => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+    return (): void => {};
+  }, [isOpen]);
   
   const getProjectData = () => {
     const projectKey = order as keyof typeof projectKeys;
@@ -82,7 +99,6 @@ const ProjectCard = ({
       technologies: "React.js, React Router, React Hooks, React Context",
     },
   };
-  ReactModal.setAppElement("#root");
   return (
     <div className={css.modal}>
       <ReactModal

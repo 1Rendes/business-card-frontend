@@ -11,6 +11,7 @@
   "404": {
     "notFound": "Seite nicht gefunden",
     "description": "Die angeforderte Seite konnte nicht gefunden werden.",
+    "redirectMessage": "Automatische Weiterleitung zur Startseite in {{seconds}} Sekunden...",
     "backToHome": "Zurück zur Startseite"
   },
   "accordion": {
@@ -143,8 +144,6 @@
     "verifyHuman": "Bitte bestätigen Sie, dass Sie ein Mensch sind",
     "verified": "✓ Erfolgreich bestätigt",
     "downloadNow": "VCF-Datei herunterladen",
-    "error": "Bestätigung fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "loading": "Überprüfung...",
     "verifyButton": "Bestätigen"
   },
   "chat": {
