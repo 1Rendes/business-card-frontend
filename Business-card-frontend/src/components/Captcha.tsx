@@ -1,6 +1,6 @@
 import { JSX, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import css from "./captcha.module.css";
+import css from "./Captcha.module.css";
 import footerCss from "./Footer.module.css";
 import ReactModal from "react-modal";
 import recaptchaIcon from "../images/google_recaptcha-icon.svg";
