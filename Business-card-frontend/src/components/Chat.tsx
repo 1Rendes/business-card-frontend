@@ -32,8 +32,8 @@ const Chat = (): JSX.Element => {
       const data: ChatMessage = JSON.parse(event.data);
       setMessages((prev) => [...prev, data]);
     };
-    ws.current.onclose = () => {
-      if (messages.length > 0) {
+    ws.current.onclose = () => {   
+      if (messages.length > 1) {
         setMessages((prev) => [
           ...prev,
           { content: t("chat.disconnected"), type: "system" },

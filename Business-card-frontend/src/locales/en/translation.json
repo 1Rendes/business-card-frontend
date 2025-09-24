@@ -11,6 +11,7 @@
   "404": {
     "notFound": "Page not found",
     "description": "The requested page could not be found.",
+    "redirectMessage": "Automatic redirect to home page in {{seconds}} seconds...",
     "backToHome": "Back to home"
   },
   "accordion": {
@@ -136,7 +137,16 @@
     }
   },
   "secondCard": {
-    "scanContact": "Scan my contact"
+    "scanContact": "Scan my contact",
+    "download": "Download contact"
+  },
+  "captcha": {
+    "verifyHuman": "Please verify that you are human",
+    "verified": "✓ Verified successfully",
+    "downloadNow": "Download VCF file",
+    "error": "Verification failed. Please try again.",
+    "loading": "Verifying...",
+    "verifyButton": "Verify"
   },
   "chat": {
     "disconnected": "Disconnected",

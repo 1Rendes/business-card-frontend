@@ -28,13 +28,6 @@ const BasicCard = (): JSX.Element => {
             <a href="mailto:mail@volo.rocks" className={css.address}>
               {t("basicCard.address.email")}
             </a>
-            {/* <a
-              className={css.addressLink}
-              target="blank"
-              href="https://github.com/1Rendes"
-            >
-              {t("basicCard.address.github")}
-            </a> */}
           </div>
         </div>
       </div>
