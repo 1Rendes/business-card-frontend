@@ -1,6 +1,6 @@
 import { JSX } from "react";
 import css from "./BasicCard.module.css";
-import profile from "../images/profile.png";
+import profile from "../images/profile.webp";
 import { useTranslation } from "react-i18next";
 
 const BasicCard = (): JSX.Element => {

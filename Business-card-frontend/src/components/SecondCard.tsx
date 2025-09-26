@@ -4,6 +4,7 @@ import qrCode from "../images/Volodymyr-QR-Code.svg";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import Captcha from "./Captcha";
+import { useEffect } from "react";
 
 const VCF_FILE_PATH: string = "/Volodymyr_Solonin.vcf";
 
@@ -30,6 +31,12 @@ const SecondCard = (): JSX.Element => {
       handleDownloadVcf();
     }
   };
+
+  useEffect(() => {
+    if (isCaptchaVerified) {
+      handleDownloadVcf();
+    }
+  },[isCaptchaVerified]);
 
   const handleCaptchaClose = (): void => {
     setShowCaptcha(false);

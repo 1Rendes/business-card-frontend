@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, JSX } from "react";
 import css from "./Profile.module.css";
 import AccordionListItem from "./AccordionListItem";
 import clsx from "clsx";
-import profile from "../images/profile.png";
+import profile from "../images/profile.webp";
 import { useTranslation } from "react-i18next";
 
 const Profile = (): JSX.Element => {

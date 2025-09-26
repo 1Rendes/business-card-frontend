@@ -16,36 +16,33 @@ interface ChatMessage {
 
 const Chat = (): JSX.Element => {
   const { t, i18n } = useTranslation();
+  const messagesRef = useRef<ChatMessage[]>([]);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isWaitForAssistantAnswer, setIsWaitForAssistantAnswer] =
     useState<boolean>(false);
   const [input, setInput] = useState<string>("");
   const ws = useRef<WebSocket | null>(null);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-  const [isConnected, setIsConnected] = useState<boolean>(true);
-
+  
   useEffect(() => {
-    setIsConnected(true);
-    if (!isConnected) return;
+    messagesRef.current = [];
+    setMessages([]);
     ws.current = new WebSocket(WEBSOCKET_URL + i18n.language);
     ws.current.onmessage = (event: MessageEvent) => {
       const data: ChatMessage = JSON.parse(event.data);
-      setMessages((prev) => [...prev, data]);
+      messagesRef.current.push(data);
+      setMessages([...messagesRef.current]);
     };
-    ws.current.onclose = () => {   
-      if (messages.length > 1) {
-        setMessages((prev) => [
-          ...prev,
-          { content: t("chat.disconnected"), type: "system" },
-        ]);
-      }
+    ws.current.onclose = () => {
+      if (messagesRef.current.length > 1) {
+        messagesRef.current.push({ content: t("chat.disconnected"), type: "system" });
+        setMessages([...messagesRef.current]);
+      } 
     };
     return () => {
       ws.current?.close();
-      setIsConnected(false);
-      setMessages([]);  
     };
-  }, [isConnected, i18n.language]);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -54,7 +51,7 @@ const Chat = (): JSX.Element => {
         behavior: "smooth",
       });
     }
-    if (messages.length > 0 && messages[messages.length - 1].type === "user") {
+    if (messagesRef.current.length > 0 && messagesRef.current[messagesRef.current.length - 1].type === "user") {
       setIsWaitForAssistantAnswer(true);
     } else {
       setIsWaitForAssistantAnswer(false);
@@ -70,11 +67,11 @@ const Chat = (): JSX.Element => {
     ) {
       const message: ChatMessage = { type: "user", content: input };
       ws.current.send(JSON.stringify(message));
-      setMessages((prev) => [...prev, message]);
+      messagesRef.current.push(message);
+      setMessages([...messagesRef.current]);
       setInput("");
     }
-  };
-
+  }; 
   return (
     <div className={`${css.chatContainer} ${css.chatContainerVisible}`}>
       <div className={css.chatMessages} ref={messagesEndRef}>
