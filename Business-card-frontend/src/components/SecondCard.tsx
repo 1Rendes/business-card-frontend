@@ -84,7 +84,7 @@ const SecondCard = (): JSX.Element => {
           )}
           <a onClick={handleDownloadClick}>
             <p className={clsx(css.downloadButton, css.name)}>
-              {isCaptchaVerified ? t("captcha.downloadNow") : t("secondCard.download")}
+              {t("secondCard.download")}
             </p>
           </a>
         </div>
