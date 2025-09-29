@@ -79,13 +79,24 @@
           "Arbeit mit verschiedenen Frontend-Bibliotheken, Übungstechniken für Paginierung, Video-Player und Backend-Interaktionen",
           "Verschiedene Techniken wurden verwendet, um das beabsichtigte Design umzusetzen, was beträchtliche Erfahrung bot"
         ]
+      },
+      "personalVisitenkarte": {
+        "goal": "Eigenständige Entwicklung einer persönlichen Website mit Projektübersicht und integriertem KI-Assistent für Text- und Sprachchat",
+        "role": "Full-Stack Entwickler",
+        "experience": [
+          "Vollständige Frontend-Entwicklung mit React.js, Vite und TypeScript",
+          "Backend-Implementierung mit Node.js, Fastify und TypeScript",
+          "Integration von KI-Technologien (OpenAI, Pinecone, LiveKit)",
+          "Entwicklung eines trainierten KI-Assistenten mit persönlichen Informationen",
+          "Implementierung von Sprach- und Textchat-Funktionalitäten"
+        ]
       }
     }
   },
   "aboutMe": {
     "description": "Ich bin ein Full-Stack Webentwickler mit praktischer Erfahrung in skalierbaren Anwendungen und der Arbeit in kollaborativen Teamumgebungen. Meine Arbeit umfasst sowohl Frontend als auch Backend, mit besonderem Interesse an der Integration von KI-Technologien in die Webentwicklung.",
     "coreCompetencies": "Kernkompetenzen:",
-    "mainStack": "Haupt-Stack",
+    "mainStack": "Main stack",
     "frontend": "Frontend",
     "backend": "Backend",
     "architecture": "Architektur",
@@ -94,8 +105,15 @@
     "developmentPractices": "Entwicklungspraktiken",
     "areasOfInterest": "Interessensgebiete",
     "education": "Ausbildung",
-    "educationLink": "GoIT Online-Kurse (2024.01 - 2024.12)",
+    "educationLink": "01/2024 bis 12/2024 - Fullstack Developer, GoIT Fullstack Entwicklerkurs, Abschluss: Zertifikat",
+    "linkText": "Link",
+    "educationItems": [
+      "09/2011 bis 07/2012 - Studium Finanz- und Kreditwesen, Institut für Wirtschaft und Verwaltung Westdonbas, Abschluss: Diplom Master (ukrainische Bezeichnung)",
+      "03/2024 bis 06/2025 - B1 Deutsch Sprachkurs, Verein für ein zeitgemäßes Leben, Abschluss: Zertifikat B1",
+      "09/2008 bis 07/2011 - Studium Finanz- und Kreditwesen, Institut für Wirtschaft und Verwaltung Westdonbas, Abschluss: Diplom Bachelor (ukrainische Bezeichnung)"
+    ],
     "projectsFromEducation": "Projekte aus der Ausbildung:",
+    "otherProjects": "Weitere Projekte:",
     "contactInformation": "Kontaktinformationen:",
     "mobile": "Mobil.:",
     "email": "Email:",
@@ -123,6 +141,10 @@
       "travelTrucks": {
         "name": "Travel-trucks",
         "description": "Webanwendung zur Suche nach LKWs für Transport. Erstellt auf bestehender API"
+      },
+      "personalVisitenkarte": {
+        "name": "Persönliche Visitenkarte",
+        "description": "Persönliche Visitenkarte-Website mit modernem Design und AI-Integration"
       }
     }
   },

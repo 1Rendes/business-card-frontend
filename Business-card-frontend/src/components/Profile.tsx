@@ -16,13 +16,17 @@ const Profile = (): JSX.Element => {
     fourth: "closed",
     fifth: "closed",
     sixth: "closed",
+    seventh: "closed",
   });
 
   useEffect(() => {
     const setBodyHeight = (): void => {
       if (profileRef.current) {
+        const footer = document.querySelector('footer');
+        const footerHeight = footer ? footer.offsetHeight : 0;
+        const additionalPadding = 450;
         document.body.style.height = `${
-          profileRef.current.offsetHeight + 450
+          profileRef.current.offsetHeight + footerHeight + additionalPadding
         }px`;
       }
     };
@@ -142,13 +146,22 @@ const Profile = (): JSX.Element => {
                   </p>
                 </td>
                 <td className={css.stringData}>
+                  <p>{t("aboutMe.educationLink")}</p>
                   <a
                     target="blank"
                     className={css.projectItem}
                     href="https://drive.google.com/file/d/11SHbgIBWBGn26p5FSf4-vylxo1p4rRR9/view?usp=drive_link00000000000/view?usp=sharing"
                   >
-                    {t("aboutMe.educationLink")}
+                    {t("aboutMe.linkText")}
                   </a>
+                  <br />
+                  <br />
+                  {(t("aboutMe.educationItems", { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                    <span key={index}>
+                      {item}
+                      {index < 2 && <><br /><br /></>}
+                    </span>
+                  ))}
                 </td>
               </tr>
             </tbody>
@@ -205,6 +218,19 @@ const Profile = (): JSX.Element => {
               shortDescription={t("aboutMe.projects.travelTrucks.description")}
             />
           </ul>
+
+          <h3>{t("aboutMe.otherProjects")}</h3>
+          <ul className={css.projectsList}>
+            <AccordionListItem
+              href="#"
+              name={t("aboutMe.projects.personalVisitenkarte.name")}
+              order="seventh"
+              accordionStates={accordionStates}
+              setAccordionStates={setAccordionStates}
+              shortDescription={t("aboutMe.projects.personalVisitenkarte.description")}
+            />
+          </ul>
+
           <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
             <a href="tel:+491717494053" className={css.address}>

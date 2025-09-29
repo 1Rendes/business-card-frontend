@@ -5,4 +5,5 @@ export type AccordionStates = {
   fourth: string;
   fifth: string;
   sixth: string;
+  seventh: string;
 };

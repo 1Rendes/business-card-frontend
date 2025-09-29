@@ -85,9 +85,14 @@
 }
 
 .stringHeader {
+  margin-top: 10px;
   font-weight: bold;
   width: 200px;
   text-align: left;
+}
+.stringData {
+  margin-top: 10px;
+  width:500px;
 }
 @media (max-width: 1200px) {
   .stringHeader {
