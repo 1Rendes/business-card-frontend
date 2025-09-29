@@ -7,6 +7,7 @@ import Portfolio from "../images/portfolioPrev.webp";
 import MovieObserver from "../images/movieObserverPrev.webp";
 import AquaTrack from "../images/aquaTrackPrev.webp";
 import TravelTrucks from "../images/travelTrucksPrev.webp";
+import PersonalVisitenkarte from "../images/personalVisitenkartePrev.webp";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 
@@ -58,6 +59,7 @@ const ProjectCard = ({
     fourth: "movieObserver",
     fifth: "aquaTrack",
     sixth: "travelTrucks",
+    seventh: "personalVisitenkarte",
   } as const;
 
   const cardData = {
@@ -98,6 +100,12 @@ const ProjectCard = ({
       imageLink: TravelTrucks,
       technologies: "React.js, React Router, React Hooks, React Context",
     },
+    seventh: {
+      name: "Persönliche Visitenkarte",
+      link: "#",
+      imageLink: PersonalVisitenkarte,
+      technologies: "React.js, Vite, TypeScript, Node.js, Fastify, Pinecone, LiveKit, OpenAI",
+    },
   };
   return (
     <div className={css.modal}>
@@ -117,10 +125,21 @@ const ProjectCard = ({
         closeTimeoutMS={300}
         ariaHideApp={false}
       >
-        <button onClick={handleClose} className={css.closeButton}>
+        <button 
+          onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+            event.stopPropagation();
+            handleClose();
+          }} 
+          className={css.closeButton}
+        >
           <IoCloseSharp className={css.closeIcon} />
         </button>
-        <div className={css.projectCard}>
+        <div 
+          className={css.projectCard}
+          onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+            event.stopPropagation();
+          }}
+        >
           <div className={css.projectCardTextContent}>
             <h2 className={css.projectCardName}>
               {cardData[order as keyof typeof cardData].name}
@@ -158,6 +177,9 @@ const ProjectCard = ({
               className={css.projectCardLink}
               href={cardData[order as keyof typeof cardData].link}
               target="blank"
+              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                event.stopPropagation();
+              }}
             >
               <img
                 src={cardData[order as keyof typeof cardData].imageLink}

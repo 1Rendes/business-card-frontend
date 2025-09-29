@@ -21,7 +21,6 @@ body {
   font-style: normal;
   font-variation-settings: "wdth" 100;
   position: relative;
-  overflow-x: hidden;
   width: 100vw;
 }
 

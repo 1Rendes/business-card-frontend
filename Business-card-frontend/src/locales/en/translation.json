@@ -79,6 +79,17 @@
           "Working with various front-end libraries, practicing techniques for working with pagination, video players, and back-end interactions",
           "Various techniques were used to implement the intended design, which provided considerable experience"
         ]
+      },
+      "personalVisitenkarte": {
+        "goal": "Independent development of a personal website with project overview and integrated AI assistant for text and voice chat",
+        "role": "Full-Stack Developer",
+        "experience": [
+          "Complete frontend development with React.js, Vite and TypeScript",
+          "Backend implementation with Node.js, Fastify and TypeScript",
+          "Integration of AI technologies (OpenAI, Pinecone, LiveKit)",
+          "Development of a trained AI assistant with personal information",
+          "Implementation of voice and text chat functionality"
+        ]
       }
     }
   },
@@ -94,8 +105,15 @@
     "developmentPractices": "Development practices",
     "areasOfInterest": "Areas of interest",
     "education": "Education",
-    "educationLink": "GoIT online courses (2024.01 - 2024.12)",
+    "educationLink": "01/2024 to 12/2024 - Fullstack Developer, GoIT Fullstack Developer Course, Certificate: Certificate",
+    "linkText": "Link",
+    "educationItems": [
+      "09/2011 to 07/2012 - Studies in Finance and Credit, Institute of Economics and Administration Westdonbas, Degree: Master's Diploma (Ukrainian designation)",
+      "03/2024 to 06/2025 - B1 German Language Course, Association for Contemporary Life, Certificate: B1",
+      "09/2008 to 07/2011 - Studies in Finance and Credit, Institute of Economics and Administration Westdonbas, Degree: Bachelor's Diploma (Ukrainian designation)"
+    ],
     "projectsFromEducation": "Projects from education:",
+    "otherProjects": "Other Projects:",
     "contactInformation": "Contact information:",
     "mobile": "Mobile:",
     "email": "Email:",
@@ -123,6 +141,10 @@
       "travelTrucks": {
         "name": "Travel-trucks",
         "description": "Web application for searching trucks for transport. Created on existing API"
+      },
+      "personalVisitenkarte": {
+        "name": "Personal business card",
+        "description": "Personal business card website with modern design and AI integration"
       }
     }
   },

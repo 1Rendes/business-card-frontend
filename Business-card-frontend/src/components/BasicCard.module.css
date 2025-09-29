@@ -74,7 +74,7 @@
 }
 
 .imageSection {
-  flex: 0 0 33%;
+  flex: 0 0 37%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,10 +87,12 @@
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .contentSection {
-  flex: 0 0 67%;
+  flex: 0 0 63%;
   display: flex;
   flex-direction: column;
   align-items: center;
