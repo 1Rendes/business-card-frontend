@@ -19,25 +19,6 @@ const Profile = (): JSX.Element => {
     seventh: "closed",
   });
 
-  useEffect(() => {
-    const setBodyHeight = (): void => {
-      if (profileRef.current) {
-        const footer = document.querySelector('footer');
-        const footerHeight = footer ? footer.offsetHeight : 0;
-        const additionalPadding = 450;
-        document.body.style.height = `${
-          profileRef.current.offsetHeight + footerHeight + additionalPadding
-        }px`;
-      }
-    };
-    setBodyHeight();
-    window.addEventListener("resize", setBodyHeight);
-    return () => {
-      window.removeEventListener("resize", setBodyHeight);
-      document.body.style.height = ""; // сброс при размонтировании
-    };
-  }, []);
-
   return (
     <div ref={profileRef} className={clsx(css.profile)}>
       <div className={css.firstBlock}>

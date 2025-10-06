@@ -1,0 +1,63 @@
+.swiperWrapper {
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  perspective: 1000px;
+}
+
+.pageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 70vh;
+  transition: all 0.25s ease-in-out;
+  transform: translateX(0) translateZ(0);
+  opacity: 1;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+/* Состояние покоя */
+.idle .pageContainer {
+  transform: translateX(0) translateZ(0) scale(1);
+  opacity: 1;
+}
+
+/* Анимация уезда старой страницы - уходит вглубь */
+.exiting .pageContainer {
+  transform: scale(0.8) translateZ(-100px);
+  opacity: 0;
+}
+
+/* Анимация приезда новой страницы */
+.entering .pageContainer {
+  transform: translateX(100%) translateZ(0) scale(1);
+  opacity: 0;
+  animation: slideInFromRight 0.25s ease-in-out forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%) translateZ(0) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateZ(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .swiperWrapper {
+    min-height: 70vh;
+    padding: 20px;
+  }
+  
+  .pageContainer {
+    min-height: 70vh;
+  }
+}
