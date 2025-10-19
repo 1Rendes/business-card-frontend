@@ -96,23 +96,41 @@
   "aboutMe": {
     "description": "I am a Full-Stack web developer with hands-on experience in scalable applications and working in collaborative team environments. My work covers both frontend and backend, with a particular interest in integrating AI technologies into web development.",
     "coreCompetencies": "Core competencies:",
-    "mainStack": "Main stack",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "architecture": "Architecture",
-    "aiFrameworks": "AI Frameworks",
-    "cachingPerformance": "Caching and performance",
-    "developmentPractices": "Development practices",
-    "areasOfInterest": "Areas of interest",
+    "mainStack": {
+      "name": "Main stack",
+      "description": "JavaScript, TypeScript, React, Next.js, Node.js, Fastify, Express, MongoDB"
+    },
+    "expertise": "Expertise",
+    "expertiseText": "Full-scale apps, Landing pages, Microservices, LangChain, LiveKit, Redis, Scalable architecture, Maintainability, Team collaboration, AI impact on development workflows and real-world applications",
     "education": "Education",
-    "educationLink": "01/2024 to 12/2024 - Fullstack Developer, GoIT Fullstack Developer Course, Certificate: Certificate",
     "linkText": "Link",
-    "educationItems": [
-      "09/2011 to 07/2012 - Studies in Finance and Credit, Institute of Economics and Administration Westdonbas, Degree: Master's Diploma (Ukrainian designation)",
-      "03/2024 to 06/2025 - B1 German Language Course, Association for Contemporary Life, Certificate: B1",
-      "09/2008 to 07/2011 - Studies in Finance and Credit, Institute of Economics and Administration Westdonbas, Degree: Bachelor's Diploma (Ukrainian designation)"
-    ],
-    "projectsFromEducation": "Projects from education:",
+    "educationItems": {
+      "first": {
+        "period": "01/2024 TO 12/2024",
+        "title": "FULLSTACK DEVELOPER",
+        "institution": "GoIT Fullstack Developer Course",
+        "degree": "Certificate: Certificate"
+      },
+      "second": {
+        "period": "03/2024 TO 06/2025",
+        "title": "B1 GERMAN LANGUAGE COURSE",
+        "institution": "Association for Contemporary Life",
+        "degree": "Certificate: B1"
+      },
+      "third": {
+        "period": "09/2011 TO 07/2012",
+        "title": "STUDIES IN FINANCE AND CREDIT",
+        "institution": "Institute of Economics and Administration Westdonbas",
+        "degree": "Degree: Master's Diploma (Ukrainian designation)"
+      },
+      "fourth": {
+        "period": "09/2008 TO 07/2011",
+        "title": "STUDIES IN FINANCE AND CREDIT",
+        "institution": "Institute of Economics and Administration Westdonbas",
+        "degree": "Degree: Bachelor's Diploma (Ukrainian designation)"
+      }
+    },
+    "projectsFromEducation": "Project Overview:",
     "otherProjects": "Other Projects:",
     "contactInformation": "Contact information:",
     "mobile": "Mobile:",

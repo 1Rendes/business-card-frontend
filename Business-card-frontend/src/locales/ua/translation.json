@@ -85,17 +85,41 @@
   "aboutMe": {
     "description": "Я — Full-Stack веброзробник із практичним досвідом у створенні масштабованих застосунків та роботі в колаборативному командному середовищі. Моя робота охоплює як Frontend, так і Backend, з особливим інтересом до інтеграції AI-технологій у веброзробку.",
     "coreCompetencies": "Основні компетенції:",
-    "mainStack": "Основний стек",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "architecture": "Архітектура",
-    "aiFrameworks": "Фреймворки ШІ",
-    "cachingPerformance": "Кешування та продуктивність",
-    "developmentPractices": "Практики розробки",
-    "areasOfInterest": "Сфери інтересів",
+    "mainStack": {
+      "name": "Основний стек",
+      "description": "JavaScript, TypeScript, React, Next.js, Node.js, Fastify, Express, MongoDB"
+    },
+    "expertise": "Експертиза",
+    "expertiseText": "Повнофункціональні додатки, Цільові сторінки, Мікросервіси, LangChain, LiveKit, Redis, Масштабована архітектура, Підтримуваність, Командна робота, Вплив ШІ на робочі процеси розробки та реальні додатки",
     "education": "Освіта",
-    "educationLink": "GoIT онлайн-курси (2024.01 - 2024.12)",
-    "projectsFromEducation": "Проекти з навчання:",
+    "linkText": "Посилання",
+    "educationItems": {
+      "first": {
+        "period": "01/2024 ДО 12/2024",
+        "title": "FULLSTACK DEVELOPER",
+        "institution": "GoIT Fullstack Developer Course",
+        "degree": "Сертифікат: Сертифікат"
+      },
+      "second": {
+        "period": "03/2024 ДО 06/2025",
+        "title": "B1 НІМЕЦЬКА МОВА",
+        "institution": "Об'єднання за сучасне життя",
+        "degree": "Сертифікат: B1"
+      },
+      "third": {
+        "period": "09/2011 ДО 07/2012",
+        "title": "ФАКУЛЬТЕТ ФІНАНСИ ТА КРЕДИТ",
+        "institution": "Інститут економіки та управління Західного Донбасу",
+        "degree": "Диплом: Магістр (українське позначення)"
+      },
+      "fourth": {
+        "period": "09/2008 ДО 07/2011",
+        "title": "ФАКУЛЬТЕТ ФІНАНСИ ТА КРЕДИТ",
+        "institution": "Інститут економіки та управління Західного Донбасу",
+        "degree": "Диплом: Бакалавр (українське позначення)"
+      }
+    },
+    "projectsFromEducation": "Огляд проектів:",
     "otherProjects": "Інші проекти:",
     "contactInformation": "Контактна інформація:",
     "mobile": "Моб.:",

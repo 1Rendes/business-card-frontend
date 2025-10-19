@@ -3,26 +3,25 @@ import css from "./AccordionListItem.module.css";
 import { AccordionStates } from "../types/accordion-states";
 import { Dispatch, SetStateAction, useEffect, useState, useRef } from "react";
 import clsx from "clsx";
-import ProjectCard from "./ProjectCard";
 import { useTranslation } from "react-i18next";
+import EducationItem from "./EducationItem";
 
 const AccordionListItem = ({
-  href,
   name,
   order,
   accordionStates,
   setAccordionStates,
   shortDescription,
+  isList = false,
 }: {
-  href: string;
   name: string;
   order: keyof AccordionStates;
   accordionStates: AccordionStates;
   setAccordionStates: Dispatch<SetStateAction<AccordionStates>>;
   shortDescription: string;
+  isList?: boolean;
 }) => {
   const { t } = useTranslation();
-  const [modalOpen, setModalOpen] = useState(false);
   const [itemHeight, setItemHeight] = useState<number>(43);
   const contentRef = useRef<HTMLLIElement>(null);
 
@@ -32,17 +31,6 @@ const AccordionListItem = ({
       setItemHeight(height);
     }
   };
-
-  useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [modalOpen]);
 
   useEffect(() => {
     calculateHeight();
@@ -61,14 +49,16 @@ const AccordionListItem = ({
       ref={contentRef}
       className={css.projectItem}
       style={{ height: `${itemHeight}px` }}
-      onClick={() =>
-        setAccordionStates((prev) => ({
-          ...prev,
-          [order]: prev[order] === "opened" ? "closed" : "opened",
-        }))
-      }
     >
-      <div className={css.projectItemHeader}>
+      <div
+        className={css.projectItemHeader}
+        onClick={() =>
+          setAccordionStates((prev) => ({
+            ...prev,
+            [order]: prev[order] === "opened" ? "closed" : "opened",
+          }))
+        }
+      >
         <p>
           <b>{name}</b>
         </p>
@@ -81,36 +71,26 @@ const AccordionListItem = ({
       </div>
       {accordionStates[order] === "opened" && (
         <div className={css.openedInfo}>
-          <p className={css.shortDescription}>{shortDescription}</p>
-          <div className={css.linkContainer}>
-            <a
-              target="blank"
-              className={css.link}
-              href={href}
-              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                event.stopPropagation();
-              }}
-            >
-              {t("accordion.visitProject")}
-            </a>
-            <a
-              className={css.link}
-              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                event.stopPropagation();
-                setModalOpen(true);
-              }}
-            >
-              {t("accordion.moreInfo")}
-            </a>
-          </div>
+          {isList ? (
+            <div className={css.educationItemsContainer}>
+              <EducationItem
+                educationNumber="first"
+                href="https://drive.google.com/file/d/11SHbgIBWBGn26p5FSf4-vylxo1p4rRR9/view?usp=drive_link00000000000/view?usp=sharing"
+              />
+              <EducationItem educationNumber="second" />
+              <EducationItem educationNumber="third" />
+              <EducationItem educationNumber="fourth" />
+            </div>
+          ) : (
+            <ul className={css.itemsList}>
+              {shortDescription.split(",").map((item, index) => (
+                <li key={index} className={css.listItem}>
+                  {item.trim()}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-      )}
-      {modalOpen && (
-        <ProjectCard
-          isOpen={modalOpen}
-          order={order}
-          handleClose={() => setModalOpen(false)}
-        />
       )}
     </li>
   );

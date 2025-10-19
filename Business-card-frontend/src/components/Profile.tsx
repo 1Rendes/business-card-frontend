@@ -1,16 +1,17 @@
-import { useState, useRef, useEffect, JSX } from "react";
+import { useState, useRef, JSX } from "react";
 import css from "./Profile.module.css";
 import AccordionListItem from "./AccordionListItem";
 import clsx from "clsx";
 import profile from "../images/profile.webp";
 import { useTranslation } from "react-i18next";
+import ProjectSwiper from "./ProjectSwiper";
 
 const Profile = (): JSX.Element => {
   const { t } = useTranslation();
   const profileRef = useRef<HTMLDivElement>(null);
 
   const [accordionStates, setAccordionStates] = useState({
-    first: "closed",
+    first: "opened",
     second: "closed",
     third: "closed",
     fourth: "closed",
@@ -31,125 +32,35 @@ const Profile = (): JSX.Element => {
             <img className={css.profilePhoto} src={profile} alt="profile" />
           </div>
           <h3>{t("aboutMe.coreCompetencies")}</h3>
-          <table className={css.table}>
-            <tbody>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.mainStack")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>
-                    JavaScript, TypeScript, React, Next.js, Node.js, MongoDB
-                  </p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.frontend")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>React, Next.js, TypeScript</p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.backend")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>Node.js, Fastify, Express,MongoDB</p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.architecture")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>Full-scale apps, landing pages, microservices</p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.aiFrameworks")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>LangChain, LiveKit</p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.cachingPerformance")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>Redis</p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.developmentPractices")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>
-                    Scalable architecture, maintainability, team collaboration
-                  </p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.areasOfInterest")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>
-                    AI impact on development workflows and real-world
-                    applications
-                  </p>
-                </td>
-              </tr>
-              <tr className={css.string}>
-                <td className={css.stringHeader}>
-                  <p>
-                    <b>{t("aboutMe.education")}</b>
-                  </p>
-                </td>
-                <td className={css.stringData}>
-                  <p>{t("aboutMe.educationLink")}</p>
-                  <a
-                    target="blank"
-                    className={css.projectItem}
-                    href="https://drive.google.com/file/d/11SHbgIBWBGn26p5FSf4-vylxo1p4rRR9/view?usp=drive_link00000000000/view?usp=sharing"
-                  >
-                    {t("aboutMe.linkText")}
-                  </a>
-                  <br />
-                  <br />
-                  {(t("aboutMe.educationItems", { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                    <span key={index}>
-                      {item}
-                      {index < 2 && <><br /><br /></>}
-                    </span>
-                  ))}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
+          <ul className={css.itemsList}>
+            <AccordionListItem
+              name={t("aboutMe.mainStack.name")}
+              order="first"
+              isList={false}
+              accordionStates={accordionStates}
+              setAccordionStates={setAccordionStates}
+              shortDescription={t("aboutMe.mainStack.description")}
+            />
+            <AccordionListItem
+              name={t("aboutMe.expertise")}
+              order="second"
+              isList={false}
+              accordionStates={accordionStates}
+              setAccordionStates={setAccordionStates}
+              shortDescription={t("aboutMe.expertiseText")}
+            />
+            <AccordionListItem
+              name={t("aboutMe.education")}
+              order="third"
+              isList={true}
+              accordionStates={accordionStates}
+              setAccordionStates={setAccordionStates}
+              shortDescription=""
+            />
+          </ul>
           <h3>{t("aboutMe.projectsFromEducation")}</h3>
-          <ul className={css.projectsList}>
+          <ProjectSwiper />
+          {/* <ul className={css.projectsList}>
             <AccordionListItem
               href="https://1rendes.github.io/goit-markup-hw-06/"
               name={t("aboutMe.projects.webStudio.name")}
@@ -198,20 +109,19 @@ const Profile = (): JSX.Element => {
               setAccordionStates={setAccordionStates}
               shortDescription={t("aboutMe.projects.travelTrucks.description")}
             />
-          </ul>
-
+          </ul> */}
           <h3>{t("aboutMe.otherProjects")}</h3>
           <ul className={css.projectsList}>
             <AccordionListItem
-              href="#"
               name={t("aboutMe.projects.personalVisitenkarte.name")}
               order="seventh"
               accordionStates={accordionStates}
               setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.personalVisitenkarte.description")}
+              shortDescription={t(
+                "aboutMe.projects.personalVisitenkarte.description"
+              )}
             />
           </ul>
-
           <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
             <a href="tel:+491717494053" className={css.address}>

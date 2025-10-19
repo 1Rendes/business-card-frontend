@@ -1,0 +1,19 @@
+.educationItem {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.periodTitle::before {
+  content: "•";
+  padding-right: 10px;
+}
+.institution {
+  margin: 0;
+}
+
+.degree {
+  margin: 0;
+}
+
+.link {
+  color: rgba(150, 186, 254, 0.51);
+}
