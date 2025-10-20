@@ -1,15 +1,41 @@
 @import url(./BasicCard.module.css);
 
 .projectCard {
+  border: 1px solid rgba(150, 186, 254, 0.51);
+  border-radius: 15px;
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  overflow: hidden;
+  height: 352px;
+  position: relative;
+  box-sizing: border-box;
 }
 @media (max-width: 767px) {
   .projectCard {
     flex-direction: column;
   }
+}
+.shadowInactive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #545454;
+  opacity: 0;
+  transition: opacity 700ms ease-in-out;
+  pointer-events: none;
+}
+.shadow {
+  background-color: #545454;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 700ms ease-in-out;
+  pointer-events: none;
+}
+.projectCardLink {
+  max-width: 80%;
 }
 .experienceList {
   list-style: disc;
@@ -21,12 +47,25 @@
 
 .projectCardPreview {
   height: 250px;
-  border-radius: 15px;
   object-fit: cover;
   overflow: hidden;
 }
 .projectCardPreviewContainer {
-  width: 45%;
+  background-image: radial-gradient(
+    circle,
+    #d3d8f4,
+    #c0ccf1,
+    #a9b8df,
+    #91a4cd,
+    #7a90bb,
+    #5c6f98,
+    #3f5076
+  );
+
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 767px) {
   .projectCardPreviewContainer {
@@ -37,11 +76,94 @@
   }
 }
 .projectCardTextContent {
+  padding: 20px 30px 30px 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
+  width: 50%;
 }
 .projectCardName {
-  margin: auto;
-  margin-bottom: 20px;
+  text-align: center;
+}
+.descriptionText {
+  text-align: center;
+}
+.buttonBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.detailsPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateX(102%);
+  transition: transform 500ms ease-in-out;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  z-index: 2;
+  visibility: visible;
+  pointer-events: none;
+}
+
+.detailsPanelOpen {
+  transform: translateX(0);
+  transition: transform 500ms ease-in-out;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.detailsPanelHidden {
+  animation: panelHideVisibility 0ms steps(0, end) 0ms forwards;
+}
+
+@keyframes panelHideVisibility {
+  to {
+    visibility: hidden;
+  }
+}
+
+.detailsContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.projectCardTextContentDetails {
+  padding: 20px 30px 30px 30px;
+  overflow-y: auto;
 }

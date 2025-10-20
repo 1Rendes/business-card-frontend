@@ -1,4 +1,5 @@
 import { IoCloseSharp } from "react-icons/io5";
+import { useState } from "react";
 import WebStudio from "../images/webStudioPrev.webp";
 import Watchcharm from "../images/watchcharmPrev.webp";
 import Portfolio from "../images/portfolioPrev.webp";
@@ -8,9 +9,25 @@ import TravelTrucks from "../images/travelTrucksPrev.webp";
 import PersonalVisitenkarte from "../images/personalVisitenkartePrev.webp";
 import { useTranslation } from "react-i18next";
 import css from "./ProjectCard.module.css";
+import footerCss from "./Footer.module.css";
 
 const ProjectCard = ({ order }: { order: string }) => {
   const { t } = useTranslation();
+  const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(false);
+
+  const handleOpenDetails = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ): void => {
+    event.stopPropagation();
+    setIsDetailsOpen(true);
+  };
+
+  const handleCloseDetails = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
+  ): void => {
+    event.stopPropagation();
+    setIsDetailsOpen(false);
+  };
 
   const getProjectData = () => {
     const projectKey = order as keyof typeof projectKeys;
@@ -112,7 +129,9 @@ const ProjectCard = ({ order }: { order: string }) => {
     //         <IoCloseSharp className={css.closeIcon} />
     //       </button>
     <div
-      className={css.projectCard}
+      className={`${css.projectCard} ${
+        isDetailsOpen ? css.projectCardShadowed : ""
+      }`}
       onClick={(event: React.MouseEvent<HTMLDivElement>) => {
         event.stopPropagation();
       }}
@@ -121,33 +140,27 @@ const ProjectCard = ({ order }: { order: string }) => {
         <h2 className={css.projectCardName}>
           {cardData[order as keyof typeof cardData].name}
         </h2>
-        <p>
-          <b>{t("projectCard.role")} </b>
-          {getProjectData().role}
+        <p className={css.descriptionText}>
+          {t(
+            `aboutMe.projects.${
+              projectKeys[order as keyof typeof projectKeys]
+            }.description`
+          )}
         </p>
-        <p>
-          <b>{t("projectCard.goal")} </b>
-          {getProjectData().goal}
-        </p>
-        <p>
-          <b>{t("projectCard.experience")}</b>
-        </p>
-        <ul className={css.experienceList}>
-          {getProjectData().experience.map((item, index) => (
-            <li className={css.experienceItem} key={index}>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p>
-          <b>{t("projectCard.technologies")}</b>
-        </p>
-        <p>{cardData[order as keyof typeof cardData].technologies}</p>
+        <div className={css.buttonBox}>
+          <a
+            className={footerCss.button}
+            href={cardData[order as keyof typeof cardData].link}
+            target="blank"
+          >
+            {t("accordion.visitProject")}
+          </a>
+          <a className={footerCss.button} onClick={handleOpenDetails}>
+            {t("accordion.moreInfo")}
+          </a>
+        </div>
       </div>
       <div className={css.projectCardPreviewContainer}>
-        <p>
-          <b>{t("projectCard.linkToProject")}</b>
-        </p>
         <a
           className={css.projectCardLink}
           href={cardData[order as keyof typeof cardData].link}
@@ -163,6 +176,59 @@ const ProjectCard = ({ order }: { order: string }) => {
           />
         </a>
       </div>
+      <div
+        className={`${css.detailsPanel} ${
+          isDetailsOpen ? css.detailsPanelOpen : ""
+        }`}
+        onClick={handleCloseDetails}
+      >
+        <div
+          className={css.detailsContent}
+          onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+            event.stopPropagation()
+          }
+        >
+          <button
+            onClick={handleCloseDetails}
+            className={css.closeButton}
+            aria-label="Close details"
+          >
+            <IoCloseSharp className={css.closeIcon} />
+          </button>
+          <div className={css.projectCardTextContentDetails}>
+            <h2 className={css.projectCardName}>
+              {cardData[order as keyof typeof cardData].name}
+            </h2>
+            <p>
+              <b>{t("projectCard.role")} </b>
+              {getProjectData().role}
+            </p>
+            <p>
+              <b>{t("projectCard.goal")} </b>
+              {getProjectData().goal}
+            </p>
+            <p>
+              <b>{t("projectCard.experience")}</b>
+            </p>
+            <ul className={css.experienceList}>
+              {getProjectData().experience.map(
+                (item: string, index: number) => (
+                  <li className={css.experienceItem} key={index}>
+                    {item}
+                  </li>
+                )
+              )}
+            </ul>
+            <p>
+              <b>{t("projectCard.technologies")}</b>
+            </p>
+            <p>{cardData[order as keyof typeof cardData].technologies}</p>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`${css.shadowInactive} ${isDetailsOpen && css.shadow}`}
+      ></div>
     </div>
   );
 };

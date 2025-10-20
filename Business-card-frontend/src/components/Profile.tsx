@@ -110,18 +110,6 @@ const Profile = (): JSX.Element => {
               shortDescription={t("aboutMe.projects.travelTrucks.description")}
             />
           </ul> */}
-          <h3>{t("aboutMe.otherProjects")}</h3>
-          <ul className={css.projectsList}>
-            <AccordionListItem
-              name={t("aboutMe.projects.personalVisitenkarte.name")}
-              order="seventh"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t(
-                "aboutMe.projects.personalVisitenkarte.description"
-              )}
-            />
-          </ul>
           <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
             <a href="tel:+491717494053" className={css.address}>

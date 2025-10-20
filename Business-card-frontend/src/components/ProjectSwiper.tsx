@@ -22,6 +22,7 @@ const ProjectSwiper = () => {
         slidesPerView={1}
         spaceBetween={5}
         effect="coverflow"
+        speed={1000}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
