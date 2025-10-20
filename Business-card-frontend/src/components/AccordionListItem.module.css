@@ -29,13 +29,15 @@
   gap: 10px;
 }
 .projectItemHeader {
+  cursor: pointer;
   display: flex;
+  padding: 0 10px;
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.shortDescription{
+.shortDescription {
   text-align: left;
 }
 .linkContainer {
@@ -56,4 +58,28 @@
   border-radius: 10px;
   padding: 5px 15px;
   cursor: pointer;
+}
+
+.itemsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 8px;
+  row-gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 15px;
+}
+
+.listItem {
+  padding-left: 10px;
+  text-align: left;
+}
+.listItem::before {
+  content: "•";
+  padding-right: 10px;
+}
+
+.educationItemsContainer {
+  width: 100%;
+  padding: 10px;
 }

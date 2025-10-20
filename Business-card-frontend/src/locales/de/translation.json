@@ -96,23 +96,41 @@
   "aboutMe": {
     "description": "Ich bin ein Full-Stack Webentwickler mit praktischer Erfahrung in skalierbaren Anwendungen und der Arbeit in kollaborativen Teamumgebungen. Meine Arbeit umfasst sowohl Frontend als auch Backend, mit besonderem Interesse an der Integration von KI-Technologien in die Webentwicklung.",
     "coreCompetencies": "Kernkompetenzen:",
-    "mainStack": "Main stack",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "architecture": "Architektur",
-    "aiFrameworks": "KI-Frameworks",
-    "cachingPerformance": "Caching und Performance",
-    "developmentPractices": "Entwicklungspraktiken",
-    "areasOfInterest": "Interessensgebiete",
+    "mainStack": {
+      "name": "Main stack",
+      "description": "JavaScript, TypeScript, React, Next.js, Node.js, Fastify, Express, MongoDB"
+    },
+    "expertise": "Expertise",
+    "expertiseText": "Vollständige Anwendungen, Landing-Seiten, Microservices, LangChain, LiveKit, Redis, Skalierbare Architektur, Wartbarkeit, Teamarbeit, KI-Einfluss auf Entwicklungsworkflows und reale Anwendungen",
     "education": "Ausbildung",
-    "educationLink": "01/2024 bis 12/2024 - Fullstack Developer, GoIT Fullstack Entwicklerkurs, Abschluss: Zertifikat",
     "linkText": "Link",
-    "educationItems": [
-      "09/2011 bis 07/2012 - Studium Finanz- und Kreditwesen, Institut für Wirtschaft und Verwaltung Westdonbas, Abschluss: Diplom Master (ukrainische Bezeichnung)",
-      "03/2024 bis 06/2025 - B1 Deutsch Sprachkurs, Verein für ein zeitgemäßes Leben, Abschluss: Zertifikat B1",
-      "09/2008 bis 07/2011 - Studium Finanz- und Kreditwesen, Institut für Wirtschaft und Verwaltung Westdonbas, Abschluss: Diplom Bachelor (ukrainische Bezeichnung)"
-    ],
-    "projectsFromEducation": "Projekte aus der Ausbildung:",
+    "educationItems": {
+      "first": {
+        "period": "01/2024 BIS 12/2024",
+        "title": "FULLSTACK DEVELOPER",
+        "institution": "GoIT Fullstack Entwicklerkurs",
+        "degree": "Abschluss: Zertifikat"
+      },
+      "second": {
+        "period": "03/2024 BIS 06/2025",
+        "title": "B1 DEUTSCH SPRACHKURS",
+        "institution": "Verein für ein zeitgemäßes Leben",
+        "degree": "Abschluss: Zertifikat B1"
+      },
+      "third": {
+        "period": "09/2011 BIS 07/2012",
+        "title": "STUDIUM FINANZ- UND KREDITWESEN",
+        "institution": "Institut für Wirtschaft und Verwaltung Westdonbas",
+        "degree": "Abschluss: Diplom Master (ukrainische Bezeichnung)"
+      },
+      "fourth": {
+        "period": "09/2008 BIS 07/2011",
+        "title": "STUDIUM FINANZ- UND KREDITWESEN",
+        "institution": "Institut für Wirtschaft und Verwaltung Westdonbas",
+        "degree": "Abschluss: Diplom Bachelor (ukrainische Bezeichnung)"
+      }
+    },
+    "projectsFromEducation": "Projektübersicht:",
     "otherProjects": "Weitere Projekte:",
     "contactInformation": "Kontaktinformationen:",
     "mobile": "Mobil.:",

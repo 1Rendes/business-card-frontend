@@ -36,7 +36,6 @@ export const getConnectionDetails = async (language: string) => {
       participantToken: token,
       participantName: decoded.sub,
     };
-    console.log("data: ", data);
     return data;
   }
 };

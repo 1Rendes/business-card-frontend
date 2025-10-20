@@ -1,0 +1,33 @@
+.projectSwiper {
+  width: 900px;
+  height: 100%;
+}
+.swiperButtons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.swiperWraper .swiperButtonNext,
+.swiperWraper .swiperButtonPrev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  fill: #fff;
+  transition: background-color 100ms ease-in-out, fill 100ms ease-in-out;
+  background-color: rgba(150, 186, 254, 0.51);
+}
+/* .swiperWraper .swiperButtonPrev {
+} */
+.swiperWraper .swiperButtonNext:hover,
+.swiperWraper .swiperButtonPrev:hover {
+  background-color: rgba(150, 186, 254, 0.91);
+}
+.swiperWraper .swiper-button-disabled {
+  fill: #fff;
+  background-color: rgba(150, 186, 254, 0.21);
+}
+.swiperWraper .swiper-button-disabled:hover {
+  background-color: rgba(150, 186, 254, 0.21);
+  fill: #fff;
+}

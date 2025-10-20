@@ -1,12 +1,13 @@
 import styles from "./Navigation.module.css";
 import { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../types/routes";
 
 type NavigationItem = {
   path: string;
   label: string;
+  index: number;
 };
 
 type Language = "de" | "en" | "ua";
@@ -20,15 +21,20 @@ const languages: { code: Language; label: string }[] = [
 export const Navigation = (): JSX.Element => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLanguageChange = (languageCode: Language): void => {
     i18n.changeLanguage(languageCode);
   };
 
+  const handleNavigationClick = (path: string): void => {
+    navigate(path);
+  };
+
   const navigationItems: NavigationItem[] = [
-    { path: ROUTES.VISITENKARTE, label: t("navigation.visitenkarte") },
-    { path: ROUTES.UEBER_MICH, label: t("navigation.ueberMich") },
-    { path: ROUTES.AI_CHAT, label: t("navigation.aiChat") },
+    { path: ROUTES.VISITENKARTE, label: t("navigation.visitenkarte"), index: 0 },
+    { path: ROUTES.UEBER_MICH, label: t("navigation.ueberMich"), index: 1 },
+    { path: ROUTES.AI_CHAT, label: t("navigation.aiChat"), index: 2 },
   ];
 
   return (
@@ -36,15 +42,16 @@ export const Navigation = (): JSX.Element => {
       <div className={styles.navContainer}>
         <div className={styles.navButtons}>
           {navigationItems.map((item) => (
-            <Link
+            <button
               key={item.path}
-              to={item.path}
+              onClick={() => handleNavigationClick(item.path)}
               className={`${styles.navButton} ${
                 location.pathname === item.path ? styles.active : ""
               }`}
+              type="button"
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </div>
         <div className={styles.languageButtons}>

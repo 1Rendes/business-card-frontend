@@ -1,6 +1,5 @@
-import ReactModal from "react-modal";
-import css from "./ProjectCard.module.css";
 import { IoCloseSharp } from "react-icons/io5";
+import { useState } from "react";
 import WebStudio from "../images/webStudioPrev.webp";
 import Watchcharm from "../images/watchcharmPrev.webp";
 import Portfolio from "../images/portfolioPrev.webp";
@@ -9,41 +8,35 @@ import AquaTrack from "../images/aquaTrackPrev.webp";
 import TravelTrucks from "../images/travelTrucksPrev.webp";
 import PersonalVisitenkarte from "../images/personalVisitenkartePrev.webp";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import css from "./ProjectCard.module.css";
+import footerCss from "./Footer.module.css";
 
-const ProjectCard = ({
-  isOpen,
-  order,
-  handleClose,
-}: {
-  isOpen: boolean;
-  order: string;
-  handleClose: () => void;
-}) => {
+const ProjectCard = ({ order }: { order: string }) => {
   const { t } = useTranslation();
+  const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(false);
 
-  useEffect((): (() => void) => {
-    if (isOpen) {
-      const scrollY: number = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
-      return (): void => {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.width = "";
-        window.scrollTo(0, scrollY);
-      };
-    }
-    return (): void => {};
-  }, [isOpen]);
-  
+  const handleOpenDetails = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ): void => {
+    event.stopPropagation();
+    setIsDetailsOpen(true);
+  };
+
+  const handleCloseDetails = (
+    event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
+  ): void => {
+    event.stopPropagation();
+    setIsDetailsOpen(false);
+  };
+
   const getProjectData = () => {
     const projectKey = order as keyof typeof projectKeys;
     const projectName = projectKeys[projectKey];
     const goal = t(`projectCard.projects.${projectName}.goal`);
     const role = t(`projectCard.projects.${projectName}.role`);
-    const experience = t(`projectCard.projects.${projectName}.experience`, { returnObjects: true });
+    const experience = t(`projectCard.projects.${projectName}.experience`, {
+      returnObjects: true,
+    });
     return {
       name: projectName,
       goal: goal,
@@ -54,7 +47,7 @@ const ProjectCard = ({
 
   const projectKeys = {
     first: "webStudio",
-    second: "watchcharm", 
+    second: "watchcharm",
     third: "portfolio",
     fourth: "movieObserver",
     fifth: "aquaTrack",
@@ -104,43 +97,105 @@ const ProjectCard = ({
       name: "Persönliche Visitenkarte",
       link: "#",
       imageLink: PersonalVisitenkarte,
-      technologies: "React.js, Vite, TypeScript, Node.js, Fastify, Pinecone, LiveKit, OpenAI",
+      technologies:
+        "React.js, Vite, TypeScript, Node.js, Fastify, Pinecone, LiveKit, OpenAI",
     },
   };
   return (
-    <div className={css.modal}>
-      <ReactModal
-        overlayClassName={{
-          base: css.backdrop,
-          afterOpen: css.backdropAfterOpen,
-          beforeClose: css.backdropBeforeClose,
-        }}
-        className={{
-          base: css.modal,
-          afterOpen: css.modalAfterOpen,
-          beforeClose: css.modalBeforeClose,
-        }}
-        isOpen={isOpen}
-        onRequestClose={handleClose}
-        closeTimeoutMS={300}
-        ariaHideApp={false}
-      >
-        <button 
-          onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-            event.stopPropagation();
-            handleClose();
-          }} 
-          className={css.closeButton}
-        >
-          <IoCloseSharp className={css.closeIcon} />
-        </button>
-        <div 
-          className={css.projectCard}
-          onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+    //   <div className={css.modal}>
+    //     <ReactModal
+    //       overlayClassName={{
+    //         base: css.backdrop,
+    //         afterOpen: css.backdropAfterOpen,
+    //         beforeClose: css.backdropBeforeClose,
+    //       }}
+    //       className={{
+    //         base: css.modal,
+    //         afterOpen: css.modalAfterOpen,
+    //         beforeClose: css.modalBeforeClose,
+    //       }}
+    //       isOpen={isOpen}
+    //       onRequestClose={handleClose}
+    //       closeTimeoutMS={300}
+    //       ariaHideApp={false}
+    //     >
+    //       <button
+    //         onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+    //           event.stopPropagation();
+    //           handleClose();
+    //         }}
+    //         className={css.closeButton}
+    //       >
+    //         <IoCloseSharp className={css.closeIcon} />
+    //       </button>
+    <div
+      className={`${css.projectCard} ${
+        isDetailsOpen ? css.projectCardShadowed : ""
+      }`}
+      onClick={(event: React.MouseEvent<HTMLDivElement>) => {
+        event.stopPropagation();
+      }}
+    >
+      <div className={css.projectCardTextContent}>
+        <h2 className={css.projectCardName}>
+          {cardData[order as keyof typeof cardData].name}
+        </h2>
+        <p className={css.descriptionText}>
+          {t(
+            `aboutMe.projects.${
+              projectKeys[order as keyof typeof projectKeys]
+            }.description`
+          )}
+        </p>
+        <div className={css.buttonBox}>
+          <a
+            className={footerCss.button}
+            href={cardData[order as keyof typeof cardData].link}
+            target="blank"
+          >
+            {t("accordion.visitProject")}
+          </a>
+          <a className={footerCss.button} onClick={handleOpenDetails}>
+            {t("accordion.moreInfo")}
+          </a>
+        </div>
+      </div>
+      <div className={css.projectCardPreviewContainer}>
+        <a
+          className={css.projectCardLink}
+          href={cardData[order as keyof typeof cardData].link}
+          target="blank"
+          onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
             event.stopPropagation();
           }}
         >
-          <div className={css.projectCardTextContent}>
+          <img
+            src={cardData[order as keyof typeof cardData].imageLink}
+            alt={cardData[order as keyof typeof cardData].name}
+            className={css.projectCardPreview}
+          />
+        </a>
+      </div>
+      <div
+        className={`${css.detailsPanel} ${
+          isDetailsOpen ? css.detailsPanelOpen : ""
+        }`}
+        onClick={handleCloseDetails}
+      >
+        <div
+          className={css.detailsContent}
+          onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+            event.stopPropagation()
+          }
+        >
+          <button
+            onClick={handleCloseDetails}
+            className={css.closeButton}
+            aria-label="Close details"
+          >
+            <IoCloseSharp className={css.closeIcon} />
+          </button>
+          <div className={css.projectCardTextContentDetails}>
             <h2 className={css.projectCardName}>
               {cardData[order as keyof typeof cardData].name}
             </h2>
@@ -157,7 +212,7 @@ const ProjectCard = ({
             </p>
             <ul className={css.experienceList}>
               {getProjectData().experience.map(
-                (item, index) => (
+                (item: string, index: number) => (
                   <li className={css.experienceItem} key={index}>
                     {item}
                   </li>
@@ -169,27 +224,11 @@ const ProjectCard = ({
             </p>
             <p>{cardData[order as keyof typeof cardData].technologies}</p>
           </div>
-          <div className={css.projectCardPreviewContainer}>
-            <p>
-              <b>{t("projectCard.linkToProject")}</b>
-            </p>
-            <a
-              className={css.projectCardLink}
-              href={cardData[order as keyof typeof cardData].link}
-              target="blank"
-              onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                event.stopPropagation();
-              }}
-            >
-              <img
-                src={cardData[order as keyof typeof cardData].imageLink}
-                alt={cardData[order as keyof typeof cardData].name}
-                className={css.projectCardPreview}
-              />
-            </a>
-          </div>
         </div>
-      </ReactModal>
+      </div>
+      <div
+        className={`${css.shadowInactive} ${isDetailsOpen && css.shadow}`}
+      ></div>
     </div>
   );
 };
