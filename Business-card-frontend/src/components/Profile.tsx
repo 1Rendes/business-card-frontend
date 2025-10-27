@@ -24,13 +24,26 @@ const Profile = (): JSX.Element => {
     <div ref={profileRef} className={clsx(css.profile)}>
       <div className={css.firstBlock}>
         <div className={css.nameBlock}>
+          <div className={css.nameBlockTitle}>
           <div className={css.mainDescriptionBlock}>
             <div className={css.mainDescriptionBlockTitle}>
               <h1>Volodymyr Solonin</h1>
-              <p>{t("aboutMe.description")}</p>
+              <p className={css.mainDescriptionBlockDescriptionFirst}>
+                {t("aboutMe.intro.firstPart")} <span className={css.mainDescriptionBlockDescriptionSpan}>{t("aboutMe.intro.highlight")}</span> {t("aboutMe.intro.secondPart")}
+              </p>
+              <p className={css.mainDescriptionBlockDescriptionSecond}>{t("aboutMe.introDescription")}</p>
             </div>
             <img className={css.profilePhoto} src={profile} alt="profile" />
           </div>
+          <div className={css.profileBlockTitle}>
+            <div className={css.profileBlockTitleImage}></div>
+            <div className={css.profileBlockTitleText}>
+            <p className={css.mainDescriptionBlockDescriptionFirst}>{t("aboutMe.work.firstPart")} <span className={css.mainDescriptionBlockDescriptionSpan}>{t("aboutMe.work.highlight")}</span></p>
+            <p className={css.mainDescriptionBlockDescriptionSecond}>{t("aboutMe.workDescription")}</p>
+            </div>
+          </div>
+          </div>
+          <div className={css.profileBlock}>
           <h3>{t("aboutMe.coreCompetencies")}</h3>
           <ul className={css.itemsList}>
             <AccordionListItem
@@ -58,58 +71,11 @@ const Profile = (): JSX.Element => {
               shortDescription=""
             />
           </ul>
+          </div>
+          <div className={css.profileBlock}>
           <h3>{t("aboutMe.projectsFromEducation")}</h3>
           <ProjectSwiper />
-          {/* <ul className={css.projectsList}>
-            <AccordionListItem
-              href="https://1rendes.github.io/goit-markup-hw-06/"
-              name={t("aboutMe.projects.webStudio.name")}
-              order="first"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.webStudio.description")}
-            />
-            <AccordionListItem
-              href="https://1rendes.github.io/Project-SuperCode/"
-              name={t("aboutMe.projects.watchcharm.name")}
-              order="second"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.watchcharm.description")}
-            />
-            <AccordionListItem
-              href="https://1rendes.github.io/Project-SuperScript/"
-              name={t("aboutMe.projects.portfolio.name")}
-              order="third"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.portfolio.description")}
-            />
-            <AccordionListItem
-              href="https://movie-observer.vercel.app/"
-              name={t("aboutMe.projects.movieObserver.name")}
-              order="fourth"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.movieObserver.description")}
-            />
-            <AccordionListItem
-              href="https://aqua-track-duna-front.vercel.app/"
-              name={t("aboutMe.projects.aquaTrack.name")}
-              order="fifth"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.aquaTrack.description")}
-            />
-            <AccordionListItem
-              href="https://travel-trucks-test-task.vercel.app/"
-              name={t("aboutMe.projects.travelTrucks.name")}
-              order="sixth"
-              accordionStates={accordionStates}
-              setAccordionStates={setAccordionStates}
-              shortDescription={t("aboutMe.projects.travelTrucks.description")}
-            />
-          </ul> */}
+          </div>
           <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
             <a href="tel:+491717494053" className={css.address}>

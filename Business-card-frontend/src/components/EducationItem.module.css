@@ -3,7 +3,6 @@
   margin-bottom: 20px;
 }
 .periodTitle::before {
-  content: "•";
   padding-right: 10px;
 }
 .institution {
@@ -15,5 +14,5 @@
 }
 
 .link {
-  color: rgba(150, 186, 254, 0.51);
+  color: rgba(117, 153, 225, 0.91);
 }
