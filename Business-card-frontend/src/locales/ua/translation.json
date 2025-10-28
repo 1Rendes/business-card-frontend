@@ -163,6 +163,24 @@
         "name": "Особиста візитівка",
         "description": "Сайт особистої візитівки з сучасним дизайном та інтеграцією ШІ"
       }
+    },
+    "emailPlaceholder": "your@email.com",
+    "commentPlaceholder": "Ваш коментар",
+    "sendButton": "Відправити",
+    "sending": "Відправка...",
+    "letsCooperate": {
+      "firstPart": "Давайте ",
+      "highlight": "співпрацювати"
+    },
+    "modal": {
+      "thankYou": "Дякуємо за повідомлення!",
+      "message": "Відповідь не заставить себе довго чекати.",
+      "errorTitle": "Помилка",
+      "errorMessage": "Не вдалося відправити повідомлення. Будь ласка, спробуйте пізніше."
+    },
+    "validation": {
+      "required": "Поле обов'язкове для заповнення",
+      "emailInvalid": "Невірний формат email"
     }
   },
   "basicCard": {

@@ -174,6 +174,24 @@
         "name": "Persönliche Visitenkarte",
         "description": "Persönliche Visitenkarte-Website mit modernem Design und AI-Integration"
       }
+    },
+    "emailPlaceholder": "your@email.com",
+    "commentPlaceholder": "Ihr Kommentar",
+    "sendButton": "Senden",
+    "sending": "Wird gesendet...",
+    "letsCooperate": {
+      "firstPart": "Lass uns ",
+      "highlight": "zusammenarbeiten"
+    },
+    "modal": {
+      "thankYou": "Vielen Dank für Ihre Nachricht!",
+      "message": "Die Antwort lässt nicht lange auf sich warten.",
+      "errorTitle": "Fehler",
+      "errorMessage": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+    },
+    "validation": {
+      "required": "Feld ist erforderlich",
+      "emailInvalid": "Ungültiges E-Mail-Format"
     }
   },
   "basicCard": {

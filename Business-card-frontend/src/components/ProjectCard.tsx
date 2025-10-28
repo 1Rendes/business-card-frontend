@@ -1,5 +1,5 @@
 import { IoCloseSharp } from "react-icons/io5";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import WebStudio from "../images/webStudioPrev.webp";
 import Watchcharm from "../images/watchcharmPrev.webp";
 import Portfolio from "../images/portfolioPrev.webp";
@@ -11,9 +11,24 @@ import { useTranslation } from "react-i18next";
 import css from "./ProjectCard.module.css";
 import footerCss from "./Footer.module.css";
 
-const ProjectCard = ({ order }: { order: string }) => {
+const ProjectCard = ({
+  order,
+  activeSlideIndex,
+}: {
+  order: string;
+  activeSlideIndex: number;
+}) => {
   const { t } = useTranslation();
   const [isDetailsOpen, setIsDetailsOpen] = useState<boolean>(false);
+  const prevActiveSlideIndexRef = useRef<number>(activeSlideIndex);
+  useEffect(() => {
+    const hasSlideChanged =
+      prevActiveSlideIndexRef.current !== activeSlideIndex;
+    if (hasSlideChanged) {
+      setIsDetailsOpen(false);
+      prevActiveSlideIndexRef.current = activeSlideIndex;
+    }
+  }, [activeSlideIndex]);
 
   const handleOpenDetails = (
     event: React.MouseEvent<HTMLAnchorElement>
@@ -102,32 +117,6 @@ const ProjectCard = ({ order }: { order: string }) => {
     },
   };
   return (
-    //   <div className={css.modal}>
-    //     <ReactModal
-    //       overlayClassName={{
-    //         base: css.backdrop,
-    //         afterOpen: css.backdropAfterOpen,
-    //         beforeClose: css.backdropBeforeClose,
-    //       }}
-    //       className={{
-    //         base: css.modal,
-    //         afterOpen: css.modalAfterOpen,
-    //         beforeClose: css.modalBeforeClose,
-    //       }}
-    //       isOpen={isOpen}
-    //       onRequestClose={handleClose}
-    //       closeTimeoutMS={300}
-    //       ariaHideApp={false}
-    //     >
-    //       <button
-    //         onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-    //           event.stopPropagation();
-    //           handleClose();
-    //         }}
-    //         className={css.closeButton}
-    //       >
-    //         <IoCloseSharp className={css.closeIcon} />
-    //       </button>
     <div
       className={`${css.projectCard} ${
         isDetailsOpen ? css.projectCardShadowed : ""

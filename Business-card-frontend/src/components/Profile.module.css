@@ -56,16 +56,15 @@
   margin-bottom: 20px;
   display: flex;
   align-items: center;
+  justify-content: end;
 }
-.profileBlockTitleImage{
-  min-width: 50%;
-  height: 200px;
+.profileBlockTitleText{
+  padding: 20px;
+  border-radius: 15px;
   background-color: rgba(150, 186, 254, 0.51);
   border: 1px solid rgba(150, 186, 254, 0.51);
-  border-radius: 15px;
-  margin-right: 50px;
+  max-width: 50%;
 }
-
 @media (max-width: 1200px) {
   .profile {
     width: 350px;
@@ -115,14 +114,15 @@
 }
 
 .profilePhoto {
+  margin-top:30px;
   width: 150px;
   height: 150px;
-  border-radius: 5%;
+  border-radius: 15px;
 }
 .nameBlock {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 110px;
   text-align: justify;
 }
 
@@ -182,11 +182,15 @@
 }
 .contactInfo {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contactBlock{
   display: flex;
   flex-direction: column;
   gap: 10px;

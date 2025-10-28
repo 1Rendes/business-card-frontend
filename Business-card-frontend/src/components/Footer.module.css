@@ -39,6 +39,12 @@
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
 }
 
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: rgba(150, 186, 254, 0.21);
+}
+
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;

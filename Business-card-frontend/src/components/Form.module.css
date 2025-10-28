@@ -1,0 +1,40 @@
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: baseline;
+  }
+  .inputBlock{
+    display: flex;
+    gap: 15px;
+  }
+  .inputWrapper{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .input{
+    background-color: transparent;
+    font-size: 18px;
+    height: 50px;
+    width: 443px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(150, 186, 254, 0.51);
+    color: inherit;
+  }
+  .inputValid{
+    border-color: #4caf50;
+  }
+  .inputInvalid{
+    border-color: #ff4444;
+  }
+  .error{
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    color: #ff4444;
+    font-size: 14px;
+    margin-top: 2px;
+  }

@@ -174,6 +174,24 @@
         "name": "Personal business card",
         "description": "Personal business card website with modern design and AI integration"
       }
+    },
+    "emailPlaceholder": "your@email.com",
+    "commentPlaceholder": "Your comment",
+    "sendButton": "Send",
+    "sending": "Sending...",
+    "letsCooperate": {
+      "firstPart": "Let's ",
+      "highlight": "cooperate"
+    },
+    "modal": {
+      "thankYou": "Thank you for your message!",
+      "message": "The response won't take long.",
+      "errorTitle": "Error",
+      "errorMessage": "Failed to send message. Please try again later."
+    },
+    "validation": {
+      "required": "Field is required",
+      "emailInvalid": "Invalid email format"
     }
   },
   "basicCard": {

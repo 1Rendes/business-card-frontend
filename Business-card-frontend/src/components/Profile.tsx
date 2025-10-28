@@ -2,9 +2,11 @@ import { useState, useRef, JSX } from "react";
 import css from "./Profile.module.css";
 import AccordionListItem from "./AccordionListItem";
 import clsx from "clsx";
+import footerCss from "./Footer.module.css";
 import profile from "../images/profile.webp";
 import { useTranslation } from "react-i18next";
 import ProjectSwiper from "./ProjectSwiper";
+import { Form } from "./Form";
 
 const Profile = (): JSX.Element => {
   const { t } = useTranslation();
@@ -36,7 +38,6 @@ const Profile = (): JSX.Element => {
             <img className={css.profilePhoto} src={profile} alt="profile" />
           </div>
           <div className={css.profileBlockTitle}>
-            <div className={css.profileBlockTitleImage}></div>
             <div className={css.profileBlockTitleText}>
             <p className={css.mainDescriptionBlockDescriptionFirst}>{t("aboutMe.work.firstPart")} <span className={css.mainDescriptionBlockDescriptionSpan}>{t("aboutMe.work.highlight")}</span></p>
             <p className={css.mainDescriptionBlockDescriptionSecond}>{t("aboutMe.workDescription")}</p>
@@ -76,14 +77,20 @@ const Profile = (): JSX.Element => {
           <h3>{t("aboutMe.projectsFromEducation")}</h3>
           <ProjectSwiper />
           </div>
+          <div className={css.profileBlock}>
+          <h3>{t("aboutMe.letsCooperate.firstPart")}<span className={css.mainDescriptionBlockDescriptionSpan}>{t("aboutMe.letsCooperate.highlight")}</span></h3>
+          <Form />
+          </div>
+          <div className={css.profileBlock}>
           <h3>{t("aboutMe.contactInformation")}</h3>
           <div className={css.contactInfo}>
-            <a href="tel:+491717494053" className={css.address}>
-              <b>{t("aboutMe.mobile")}</b> +49 (0)171 749 4053
+            <a href="tel:+491717494053" className={footerCss.button}>
+              +49 (0)171 749 4053
             </a>
-            <a href="mailto:mail@volo.rocks" className={css.address}>
-              <b>{t("aboutMe.email")}</b> mail@volo.rocks
+            <a href="mailto:mail@volo.rocks" className={footerCss.button}>
+               mail@volo.rocks
             </a>
+          </div>
           </div>
         </div>
       </div>
