@@ -17,6 +17,14 @@
   padding: 50px 100px;
   box-sizing: border-box;
 }
+@media (max-width: 1200px) {
+  .profile {
+    width: 350px;
+    padding: 30px 15px 70px 15px;
+    box-shadow: 0 5px 15px 0 rgba(27, 38, 94, 0.8);
+  }
+}
+
 .profileBlock{
   display: flex;
   flex-direction: column;
@@ -27,27 +35,63 @@
   flex-direction: column;
   gap: 20px;
 }
+@media (max-width: 1200px) {
 
+.nameBlockTitle{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+}
 .mainDescriptionBlock {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
-
+@media (max-width: 1200px) {
+  .mainDescriptionBlock{
+    gap:30px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .mainDescriptionBlockTitle{
   padding: 50px 0 50px 0;
+}
+@media (max-width: 1200px) {
+  .mainDescriptionBlockTitle{
+    padding: 0;
+  }
 }
 
 .mainDescriptionBlockDescriptionFirst{
   font-size: 35px;
   text-transform: uppercase;
 }
+@media (max-width: 1200px) {
+  .mainDescriptionBlockDescriptionFirst{
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: left;
+  }
+}
 .mainDescriptionBlockDescriptionSecond{
   text-align: left;
   padding-left: 50px;
   font-size: 18px;
   font-style: italic;
+}
+.mainDescriptionBlockDescriptionThird{
+  text-align: left;
+  padding-left: 50px;
+  font-size: 18px;
+  font-style: italic;
+}
+@media (max-width: 1200px) {
+  .mainDescriptionBlockDescriptionThird{
+    padding-left: 30px;
+  }
 }
 .mainDescriptionBlockDescriptionSpan{
   color: #764ba2;
@@ -58,6 +102,11 @@
   align-items: center;
   justify-content: end;
 }
+@media (max-width: 1200px) {
+  .profileBlockTitle{
+    justify-content: center;
+  }
+}
 .profileBlockTitleText{
   padding: 20px;
   border-radius: 15px;
@@ -66,17 +115,8 @@
   max-width: 50%;
 }
 @media (max-width: 1200px) {
-  .profile {
-    width: 350px;
-    padding: 30px 15px;
-    box-shadow: 0 5px 15px 0 rgba(27, 38, 94, 0.8);
-  }
-}
-@media (max-width: 1200px) {
-  .mainDescriptionBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .profileBlockTitleText{
+    max-width: 100%;
   }
 }
 .controls {
@@ -119,13 +159,23 @@
   height: 150px;
   border-radius: 15px;
 }
+@media (max-width: 1200px) {
+  .profilePhoto{
+    margin-top: 0;
+  }
+}
 .nameBlock {
   display: flex;
   flex-direction: column;
-  gap: 110px;
+  gap: 90px;
   text-align: justify;
 }
-
+@media (max-width: 1200px) {
+  .nameBlock{
+    width: 320px;
+    gap: 50px;
+  }
+}
 .stringHeader {
   margin-top: 10px;
   font-weight: bold;
@@ -184,7 +234,12 @@
   display: flex;
   gap: 20px;
 }
-
+@media (max-width: 1200px) {
+  .contactInfo{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .itemsList {
   display: flex;
   flex-direction: column;

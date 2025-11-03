@@ -10,9 +10,10 @@
   position: relative;
   box-sizing: border-box;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .projectCard {
     flex-direction: column;
+    height: 100%;
   }
 }
 .shadowInactive {
@@ -67,8 +68,9 @@
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .projectCardPreviewContainer {
+    padding: 10px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -83,6 +85,13 @@
   gap: 10px;
   width: 50%;
 }
+@media (max-width: 1200px) {
+  .projectCardTextContent {
+    width: 100%;
+    padding: 10px;
+    gap: 60px;
+  }
+}
 .projectCardName {
   font-weight: 500;
   text-transform: uppercase;
@@ -96,7 +105,12 @@
   justify-content: space-between;
   gap: 10px;
 }
-
+@media (max-width: 1200px) {
+  .buttonBox {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .detailsPanel {
   position: absolute;
   top: 0;

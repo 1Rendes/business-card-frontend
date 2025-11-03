@@ -40,7 +40,7 @@ const Profile = (): JSX.Element => {
           <div className={css.profileBlockTitle}>
             <div className={css.profileBlockTitleText}>
             <p className={css.mainDescriptionBlockDescriptionFirst}>{t("aboutMe.work.firstPart")} <span className={css.mainDescriptionBlockDescriptionSpan}>{t("aboutMe.work.highlight")}</span></p>
-            <p className={css.mainDescriptionBlockDescriptionSecond}>{t("aboutMe.workDescription")}</p>
+            <p className={css.mainDescriptionBlockDescriptionThird}>{t("aboutMe.workDescription")}</p>
             </div>
           </div>
           </div>

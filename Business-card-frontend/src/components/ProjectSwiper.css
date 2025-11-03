@@ -2,6 +2,11 @@
   width: 900px;
   height: 100%;
 }
+@media (max-width: 1200px) {
+  .projectSwiper {
+    width: 320px;
+  }
+}
 .swiperButtons {
   margin-top: 15px;
   display: flex;

@@ -2,6 +2,12 @@
   margin-left: 20px;
   margin-bottom: 20px;
 }
+@media (max-width: 1200px) {
+  .educationItem{
+    margin-left: 0;
+    text-align: left;
+  }
+}
 .periodTitle::before {
   padding-right: 10px;
 }

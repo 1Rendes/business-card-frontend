@@ -8,6 +8,7 @@
   perspective: 1000px;
 }
 
+
 .pageContainer {
   width: 100%;
   display: flex;
@@ -19,7 +20,6 @@
   box-sizing: border-box;
   transform-style: preserve-3d;
 }
-
 /* Состояние покоя */
 .idle .pageContainer {
   transform: translateX(0) translateZ(0) scale(1);
@@ -51,10 +51,10 @@
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .swiperWrapper {
     min-height: 70vh;
-    padding: 20px;
+    padding: 10px;
   }
   
   .pageContainer {

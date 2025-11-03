@@ -8,6 +8,12 @@
     display: flex;
     gap: 15px;
   }
+  @media (max-width: 1200px) {
+    .inputBlock{
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
   .inputWrapper{
     display: flex;
     position: relative;
@@ -23,6 +29,11 @@
     border-radius: 15px;
     border: 1px solid rgba(150, 186, 254, 0.51);
     color: inherit;
+  }
+  @media (max-width: 1200px) {
+    .input{
+      width: 320px;
+    }
   }
   .inputValid{
     border-color: #4caf50;
