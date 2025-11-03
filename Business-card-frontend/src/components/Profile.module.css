@@ -20,7 +20,7 @@
 @media (max-width: 1200px) {
   .profile {
     width: 350px;
-    padding: 30px 15px 70px 15px;
+    padding: 30px 10px 70px 10px;
     box-shadow: 0 5px 15px 0 rgba(27, 38, 94, 0.8);
   }
 }

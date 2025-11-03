@@ -4,7 +4,8 @@
 }
 @media (max-width: 1200px) {
   .projectSwiper {
-    width: 320px;
+    width: 100%;
+    max-width: 330px;
   }
 }
 .swiperButtons {
