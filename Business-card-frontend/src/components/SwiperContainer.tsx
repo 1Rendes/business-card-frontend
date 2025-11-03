@@ -2,6 +2,8 @@ import { JSX, useEffect, useState } from "react";
 import VisitenkartePage from "../pages/VisitenkartePage";
 import LebenslaufPage from "../pages/LebenslaufPage";
 import AiChatPage from "../pages/AiChatPage";
+import ImpressumPage from "../pages/ImpressumPage";
+import DatenschutzPage from "../pages/DatenschutzPage";
 import styles from "./SwiperContainer.module.css";
 
 type SwiperContainerProps = {
@@ -21,7 +23,13 @@ const SwiperContainer = ({
     useState<number>(activeSlideIndex);
   const [nextPageIndex, setNextPageIndex] = useState<number>(activeSlideIndex);
 
-  const pages: PageComponent[] = [VisitenkartePage, LebenslaufPage, AiChatPage];
+  const pages: PageComponent[] = [
+    VisitenkartePage,
+    LebenslaufPage,
+    AiChatPage,
+    ImpressumPage,
+    DatenschutzPage,
+  ];
 
   useEffect(() => {
     if (currentPageIndex !== activeSlideIndex) {

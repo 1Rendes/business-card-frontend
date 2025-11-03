@@ -3,7 +3,6 @@ import { BrowserRouter, useLocation, useNavigate } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import Footer from "./components/Footer";
 import SwiperContainer from "./components/SwiperContainer";
-import { NotFoundPage } from "./pages/404";
 import { ROUTES } from "./types/routes";
 
 type AppContentProps = {
@@ -20,6 +19,8 @@ const AppContent = ({ onSlideChange, activeSlideIndex }: AppContentProps): JSX.E
       [ROUTES.VISITENKARTE]: 0,
       [ROUTES.UEBER_MICH]: 1,
       [ROUTES.AI_CHAT]: 2,
+      [ROUTES.IMPRESSUM]: 3,
+      [ROUTES.DATENSCHUTZ]: 4,
     };
 
     const currentIndex = pathToIndexMap[location.pathname];
@@ -33,6 +34,8 @@ const AppContent = ({ onSlideChange, activeSlideIndex }: AppContentProps): JSX.E
       0: ROUTES.VISITENKARTE,
       1: ROUTES.UEBER_MICH,
       2: ROUTES.AI_CHAT,
+      3: ROUTES.IMPRESSUM,
+      4: ROUTES.DATENSCHUTZ,
     };
 
     const newPath = indexToPathMap[newIndex];
@@ -40,12 +43,6 @@ const AppContent = ({ onSlideChange, activeSlideIndex }: AppContentProps): JSX.E
       navigate(newPath, { replace: true });
     }
   };
-
-  const isNotFoundPage = !Object.values(ROUTES).includes(location.pathname as any);
-
-  if (isNotFoundPage) {
-    return <NotFoundPage />;
-  }
 
   return (
     <>

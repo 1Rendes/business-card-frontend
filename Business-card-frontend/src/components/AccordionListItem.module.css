@@ -42,6 +42,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  -webkit-tap-highlight-color: transparent;
 }
 .shortDescription {
   text-align: left;
