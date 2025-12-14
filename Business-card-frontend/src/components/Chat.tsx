@@ -5,9 +5,9 @@ import clsx from "clsx";
 import { IoIosSend } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
-const WEBSOCKET_URL =
-  "wss://business-card-backend-uwr3.onrender.com/ws?language=";
-// const WEBSOCKET_URL = "ws://localhost:3001/ws?language=";
+// const WEBSOCKET_URL =
+  // "wss://business-card-backend-uwr3.onrender.com/ws?language=";
+const WEBSOCKET_URL = "ws://localhost:3001/ws?language=";
 
 interface ChatMessage {
   content: string;

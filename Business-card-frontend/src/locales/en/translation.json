@@ -176,6 +176,7 @@
       }
     },
     "emailPlaceholder": "your@email.com",
+    "namePlaceholder": "Company name (optional)",
     "commentPlaceholder": "Your message",
     "sendButton": "Send",
     "sending": "Sending...",

@@ -165,6 +165,7 @@
       }
     },
     "emailPlaceholder": "your@email.com",
+    "namePlaceholder": "Назва компанії (необов'язково)",
     "commentPlaceholder": "Ваше повідомлення",
     "sendButton": "Відправити",
     "sending": "Відправка...",

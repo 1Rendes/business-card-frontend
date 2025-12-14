@@ -8,11 +8,13 @@ import { sendFeedback } from "../utils/sendFeedback";
 
 interface FormValues {
   email: string;
+  name: string;
   comment: string;
 }
 
 interface FormErrors {
   email?: string;
+  name?: string;
   comment?: string;
 }
 
@@ -39,6 +41,7 @@ export const Form = () => {
   const formik = useFormik<FormValues>({
     initialValues: {
       email: "",
+      name: "",
       comment: "",
     },
     validate: validateForm,
@@ -46,6 +49,7 @@ export const Form = () => {
       setIsSubmitting(true);
       const formData = {
         email: values.email,
+        name: values.name,
         comment: values.comment,
       };
       modalClosedRef.current = false;
@@ -106,6 +110,27 @@ export const Form = () => {
           />
           {shouldShowError("email") && (
             <span className={css.error}>{formik.errors.email}</span>
+          )}
+        </div>
+        <div className={css.inputWrapper}>
+          <input
+            id="name"
+            name="name"
+            className={`${css.input} ${
+              isFieldInvalid("name")
+                ? css.inputInvalid
+                : isFieldValid("name")
+                ? css.inputValid
+                : ""
+            }`}
+            type="text"
+            placeholder={t("aboutMe.namePlaceholder")}
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {shouldShowError("name") && (
+            <span className={css.error}>{formik.errors.name}</span>
           )}
         </div>
         <div className={css.inputWrapper}>

@@ -6,12 +6,14 @@
   }
   .inputBlock{
     display: flex;
+    width: 100%;
     gap: 15px;
   }
   @media (max-width: 1200px) {
     .inputBlock{
       flex-direction: column;
       gap: 10px;
+      width: 100%;
     }
   }
   .inputWrapper{
@@ -19,12 +21,13 @@
     position: relative;
     flex-direction: column;
     gap: 5px;
+    width: 100%;	
   }
   .input{
     background-color: transparent;
     font-size: 18px;
     height: 50px;
-    width: 443px;
+    width: 100%;
     padding: 15px;
     border-radius: 15px;
     border: 1px solid rgba(150, 186, 254, 0.51);
